@@ -1,0 +1,1200 @@
+<!doctype html>
+<html>
+<head>
+<meta name="baidu-site-verification" content="T1DymlrMyg" />
+<meta name="google-site-verification" content="8_kky-R3LwbIRThdxPCE0hOPmITxkyTwO_vwgFNC_xs" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="JavaScript,前端," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lyjBlog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/123.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="JS初体验标签
+在script标签解析章,charset不常用到,如
+1&amp;lt;script type=&quot;text/javaScript&quot; src=&quot;xxx.js&quot; charset=&quot;gb2312&quot;&amp;gt;
+一般写成:
+1&amp;lt;script type=&quot;text/javaScript&quot;&amp;gt;
+
+script标签解析中,defer:表示脚本可以延迟到文档完全被解析和显示之后再执行。因为大多浏览器">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS初体验">
+<meta property="og:url" content="http://lyjnc.me/2016/05/30/JS初体验/index.html">
+<meta property="og:site_name" content="lyjBlog">
+<meta property="og:description" content="JS初体验标签
+在script标签解析章,charset不常用到,如
+1&amp;lt;script type=&quot;text/javaScript&quot; src=&quot;xxx.js&quot; charset=&quot;gb2312&quot;&amp;gt;
+一般写成:
+1&amp;lt;script type=&quot;text/javaScript&quot;&amp;gt;
+
+script标签解析中,defer:表示脚本可以延迟到文档完全被解析和显示之后再执行。因为大多浏览器">
+<meta property="og:updated_time" content="2017-04-20T15:48:40.604Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS初体验">
+<meta name="twitter:description" content="JS初体验标签
+在script标签解析章,charset不常用到,如
+1&amp;lt;script type=&quot;text/javaScript&quot; src=&quot;xxx.js&quot; charset=&quot;gb2312&quot;&amp;gt;
+一般写成:
+1&amp;lt;script type=&quot;text/javaScript&quot;&amp;gt;
+
+script标签解析中,defer:表示脚本可以延迟到文档完全被解析和显示之后再执行。因为大多浏览器">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: "",
+    fancybox: false,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    root: '/',
+    algolia: {
+          applicationID: 'N5BB54Q7CK',
+          apiKey: 'cd33d69bf490ade81e58f08fd7bd2c7e',
+          indexName: 'lyjnc',
+          hits: {"per_page":5},
+          labels: {"input_placeholder":"搜索...","hits_empty":"未发现与 「${query}」相关的内容","hits_stats":"${hits} 条相关条目，使用了 ${time} 毫秒"}
+        }
+  };
+</script>
+
+
+  <title> JS初体验 | lyjBlog </title>
+</head>
+
+<body>
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  <div class="container one-collumn  page-post-detail ">
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <script>var duoshuoQuery = {short_name:"imgaylao"};</script>
+<script src="http://static.duoshuo.com/embed.js"></script>
+
+<script src="http://7vzqg8.com1.z0.glb.clouddn.com/cdn/firebase/2.2.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBSw4nnhSh4AgAkZJfxxjstjLXo1dqpE5E",
+    authDomain: "project-8697214803948885730.firebaseapp.com",
+    databaseURL: "https://project-8697214803948885730.firebaseio.com",
+    storageBucket: "",
+  };
+  Firebase.initializeApp(config);
+</script>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lyjBlog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+             <div style="width:80%;margin:0 auto;height:10px;">
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=22768523&auto=0&height=66"></iframe></div>
+      </div>
+ 
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="lyjloveDT" />
+          <p class="site-author-name" itemprop="name">lyjloveDT</p>
+          <p class="site-description motion-element" itemprop="description">Only One Life To Live!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element ">
+
+              <span class="links-of-author-item">
+                <a href="https://github.com/lyj505" target="_blank" rel="external nofollow">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+              </span>
+
+              <span class="links-of-author-item">
+                <a href="http://steamcommunity.com/profiles/76561198098519946/" target="_blank" rel="external nofollow">
+                    <i class="fa fa-steam"></i> Steam
+                </a>
+              </span>
+
+
+
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS初体验"><span class="nav-number">1.</span> <span class="nav-text">JS初体验</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#标签"><span class="nav-number">1.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法关键保留字及变量"><span class="nav-number">1.2.</span> <span class="nav-text">语法关键保留字及变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-number">1.3.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数值类型"><span class="nav-number">1.4.</span> <span class="nav-text">数值类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型-string-object对象类型"><span class="nav-number">1.4.1.</span> <span class="nav-text">字符串类型(string)+(object对象类型)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类型"><span class="nav-number">1.4.2.</span> <span class="nav-text">字符串类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.4.3.</span> <span class="nav-text">String 类型包含了一些特殊的字符字面量，也叫转义序列。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript的字符串"><span class="nav-number">1.4.4.</span> <span class="nav-text">ECMAScript的字符串</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">1.5.</span> <span class="nav-text">运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是表达式"><span class="nav-number">1.5.1.</span> <span class="nav-text">什么是表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一元运算符"><span class="nav-number">1.5.2.</span> <span class="nav-text">一元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算符"><span class="nav-number">1.5.3.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符中表达式与值的关系"><span class="nav-number">1.5.4.</span> <span class="nav-text">运算符中表达式与值的关系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">1.6.</span> <span class="nav-text">逻辑运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑与-amp-amp"><span class="nav-number">1.6.1.</span> <span class="nav-text">逻辑与  &&</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑或"><span class="nav-number">1.6.2.</span> <span class="nav-text">逻辑或   ||</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逻辑非"><span class="nav-number">1.6.3.</span> <span class="nav-text">逻辑非</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位运算"><span class="nav-number">1.6.4.</span> <span class="nav-text">位运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他运算符"><span class="nav-number">1.6.5.</span> <span class="nav-text">其他运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.6.</span> <span class="nav-text">逗号运算符 逗号运算符可以在一条语句中执行多个操作</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+
+    </header>
+
+
+
+    <main id="main" class="main" style="margin-top: 100px;">
+      <div class="main-inner">
+      <!--关闭本页访问数-->
+         <!--  <div id="detail_counter" style="text-align:center;"></div> -->
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS初体验
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-30T01:18:55+08:00" content="2016-05-30">
+              2016-05-30
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JS初体验"><a href="#JS初体验" class="headerlink" title="JS初体验"></a>JS初体验</h1><h2 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h2><ul>
+<li><p>在script标签解析章,charset不常用到,如</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javaScript"</span> <span class="attr">src</span>=<span class="string">"xxx.js"</span> <span class="attr">charset</span>=<span class="string">"gb2312"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure>
+<p>一般写成:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javaScript"</span>&gt;</span><span class="undefined"></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>script标签解析中,defer:表示脚本可以延迟到文档完全被解析和显示之后再执行。因为大多浏览器不支持,所以很少用。所以一般将js的内容放在html之后:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javaScript"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    alert(<span class="string">'欢迎来到JavaScript世界！'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a></li>
+<li>如果将js的内容放在body标签内的最前端,根据渲染顺序,网页就会先解析js里的内容。</li>
+<li><p>直接在显示了文本之后放入你要执行的脚本，逻辑性更清晰:</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">欢迎来到JavaScript世界！</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javaScript"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    alert(<span class="string">'欢迎来到JavaScript世界！'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果script标签放在head与head之间，文本在body与body之间，那么网页就会先执行head与head之间的内容。</p>
+</li>
+<li>当然以后有script标签放在head与head之间，文本在body与body之间，但是想要先执行文本的方法，以后会提到- -..哥</li>
+<li>在浏览器(仅限火狐)中输入about:config,可以调节浏览器启用或者关闭Javascript的功能。</li>
+</ul>
+<h2 id="语法关键保留字及变量"><a href="#语法关键保留字及变量" class="headerlink" title="语法关键保留字及变量"></a>语法关键保留字及变量</h2><ul>
+<li>标识符:指的是变量、函数、属性的名称,或者函数的参数。标识符规则：<br>1.第一字符必须是字母、下划线”_”或一个美元符号($)。<br>2.其他字符可以是字母、下划线、美元符号或数字。<br>3.不能把关键字、保留字、true、false和null作为标识符。</li>
+<li>直接量(字面量literal):程序中直接显示出来的数据值<br>在ECMAScript 第三版中，像数组字面量和对象字面量的表达式也是支持的，如下：<br>｛x:1,y:2｝　　　对象字面量表达式<br>[1,2,3,4,5]　　　数组字面量表达式</li>
+<li>JavaScript中什么事对象: JavaScript中的所有事物都是对象:字符串、数值、数组、函数…此外,JavaScript允许自定义对象。</li>
+<li>布尔值:要注意的是,这个布尔型与C/C++中的布尔型有所不同,C/C++中的布尔型除了可以使用ture或false以外,还可以使用1或0.但在javascript中只能使用true或false.</li>
+<li>空值型:在javascript中空值是用null表示,null值是个特殊的值,只表示什么都没有,如果试图引用一个未经定义的变量,由于它没有值,返回值就为null值.</li>
+<li>单引号和双引号表示的字符串解析方式不同，而ECMAScript中，这两种表示方法没有任何区别<br>但要记住的是，必须成对出现，不能穿插使用，否则会出错。</li>
+</ul>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> boxString=<span class="string">'李应劼'</span></span><br><span class="line">boxString=<span class="number">100</span>;</span><br><span class="line">alert(boxString);</span><br></pre></td></tr></table></figure>
+<p>这种编程方式不好，因为改变不同类型的量，对于后期维护带来困难，性能不高，导致成本高。最好分成2个变量。</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>  　　<blockquote>Ecmascript中有5种简单数据类型：Undefined(未定义)、Null(无效值)、Boolean(布尔型)、Number(数字型)、String(字符串)。还有一种复杂的Object。ECMAScript 不支持任何创建自定义类型的机制，所有值都成为以上6种数据类型之一。</blockquote></p>
+<table>
+<thead>
+<tr>
+<th>字符串类型(类型返回的字符串)</th>
+<th style="text-align:center">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>undefined</td>
+<td style="text-align:center">未定义</td>
+</tr>
+<tr>
+<td>boolean</td>
+<td style="text-align:center">布尔值</td>
+</tr>
+<tr>
+<td>string</td>
+<td style="text-align:center">字符串</td>
+</tr>
+<tr>
+<td>number</td>
+<td style="text-align:center">数值</td>
+</tr>
+<tr>
+<td>object</td>
+<td style="text-align:center">对象或null</td>
+</tr>
+<tr>
+<td>function</td>
+<td style="text-align:center">函数</td>
+</tr>
+<tr>
+<td>前5个是数据类型,最后一个不是,是函数类型</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>空对象和空的对象的区别:<br>空的对象，表示这个对象创建了，里面没有东西<br>空对象，表示没有创建，就是一个null (null就属于Null类型)</p>
+</li>
+<li><p>null和undefined<br> 不同类型间比较，==之比较“转化成同一类型后的值,看”值”是否相等，===如果类型不同，其结果就是不等,但是:</p>
+</li>
+</ul>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   alert(<span class="literal">undefined</span>==<span class="literal">null</span>);</span><br><span class="line">   <span class="regexp">//</span>任何时候都不建议显式的设置一个变量为<span class="literal">undefined</span>，</span><br><span class="line">   <span class="regexp">//</span>但是如果保存对象的变量还没有真正保存对象，应该设置成<span class="literal">null</span>。</span><br><span class="line">   <span class="regexp">//</span>实际上，<span class="literal">undefined</span>值是派生自<span class="literal">null</span>值的，ECMAScript标准规定对二者进行相等性测试要返回<span class="literal">true</span>,和一般的判断==是不同的,是规定的</span><br><span class="line"></span><br><span class="line">alert(<span class="literal">undefined</span>===<span class="literal">null</span>);    <span class="regexp">//</span> 三个等号表示恒等，所以要求数据类型也必须相等才可以，</span><br><span class="line">                           <span class="regexp">//</span><span class="literal">undefined</span>数据类型是Undefined ,<span class="literal">null</span> 数据类型是Null，</span><br><span class="line">                          <span class="regexp">//</span>Undefined类型返回的字符串是<span class="literal">undefined</span>,Null类型返回的字符串是object。</span><br><span class="line">                         <span class="regexp">//</span><span class="literal">undefined</span> 的值是<span class="literal">undefined</span>，<span class="literal">null</span> 的值是<span class="literal">null</span>，也不同</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>函数function<br>函数不是数据类型，但是用typeof 操作符也可以用。打印出来是它function(){}本体。typeof操作符可以操作变量也可以操作自变量，虽然可以(typeof 250)这样使用，这是一个函数的用法，但是typeof是操作符而非内置函数。PS：函数function在ECMAScript中是对象，而不是一种数据类型，所以使用typeof 来区分function 和object 是非常有必要的。<br>但是typeof可以操作function输出它本身，而字符串返回”数据类型”(执行了一个动作)是function。</p>
+</li>
+<li><p>undefined<br>Undefind类型只有一个值，即特殊的undefined。</p>
+</li>
+</ul>
+<p>1.在使用var 声明变量，但没有对其初始化的时候这个值就是undefined。<br>2.给变量赋值undefined,没什么意义。<br>3.未定义变量,alert变量,也是undefined。这种从逻辑上思考是错误的,因为最开始Undefind是由于没有对其初始化,理应报错。所以，我们在定义变量的时候，尽可能的不要只声明，不赋值。</p>
+<ul>
+<li><p>null<br>Null类型是一个只有一个值的数据类型，即特殊的值null。它表示一个空对象引用(指针)，而typeof操作符检测null会返回object。</p>
+</li>
+<li><p>数值型—浮点型</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box =<span class="number">.8</span>;           <span class="comment">//有效，但不推荐此写法 CSS JS压缩的时候难道不变成.8吗？。。</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="number">12.0</span>;          <span class="comment">//小数点后面是0，转成为12</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="number">4.12e9</span>;        <span class="comment">//即4120000000   (4*10^9)</span></span><br></pre></td></tr></table></figure>
+<p>由于保存浮点数值需要的内存空间比整型数值大两倍，因此ECMAScript会自动将可以转换为整型的浮点数值转成为整型。<br>对于那些过大或过小的数值，可以用科学技术法来表示(e表示法)。用e表示该数值的前面10的指数次幂。</p>
+</li>
+<li><p>NAN<br>即非数值(Not a Number)是一个特殊的值，这个数值用于表示一个本来要返回数值的操作数未返回数值的情况(这样就不会抛出错误了)。比如，在其他语言中，任何数值除以0都会导致错误而终止程序执行。但在ECMAScript中，会返回特殊的值，因此不会影响程序执行。非数值的性质：可以通过Number.NaN得到NaN值，任何与NaN进行运算的结果均为NaN，NaN与自身不相等(NaN不与任何值相等)</p>
+</li>
+</ul>
+<p>　　ECMAScript中提供了isNaN的函数判断是不是NaN类型。<br>isNaN()函数也适用于对象。在调用isNaN()函数过程中，首先会调用valueOf()方法，然后确定返回值是否能够转换成数值。如果不能，则基于这个返回值再调用toString()方法，再测试返回值</p>
+<ul>
+<li>转型函数<br>有3个函数可以把非数值转换为数值：<br>Number()<br>parseInt()     (将字符串转换成整数)<br>parseFloat()  (将字符串转换成浮点数)。<br>Number()函数是转型函数可以用于任何数据类型，而另外两个则专门用于把字符串转换成数值。有2个特殊的：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Number</span>(<span class="literal">null</span>));      <span class="comment">// 0,空对象返回0</span></span><br><span class="line">alert(<span class="built_in">Number</span>(<span class="literal">undefined</span>))  <span class="comment">//NaN,undefined 返回NaN</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果是字符串，应该遵循以下5条规则：<br>1.只包含数值的字符串，会直接转换成十进制数值，如果包含前导0，即自动去掉。(0456是八进制会出问题’0456’是字符串转换成的结果就没有问题 )<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Number</span>(<span class="string">'456'</span>));    <span class="comment">//456</span></span><br><span class="line">alert(<span class="built_in">Number</span>(<span class="string">'0456'</span>));    <span class="comment">//456</span></span><br><span class="line">alert(<span class="string">'0456'</span>);    <span class="comment">//456</span></span><br><span class="line">alert(<span class="number">0456</span>);      <span class="comment">//这个就会出问题,因为输出的不是十进制,是八进制,就会转换成302</span></span><br><span class="line">alert(<span class="built_in">Number</span>(<span class="string">'070'</span>));    <span class="comment">//70</span></span><br></pre></td></tr></table></figure></p>
+<p>2.只包含浮点数值的字符串，会直接转换成浮点数值，如果包含前导和后导0，即自动去掉。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Number</span>(<span class="string">'0.890'</span>));    <span class="comment">//8.9 。。经过实测并不是这样(这条有点问题)</span></span><br></pre></td></tr></table></figure></p>
+<p>3.如果字符串是空的，那么直接转换成0。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="built_in">Number</span>(<span class="string">''</span>));    <span class="comment">//0</span></span><br></pre></td></tr></table></figure></p>
+<p>4.如果不是以上三种字符串类型，则返回NaN。<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="name">Number</span>('Lee123'))<span class="comment">;    //NaN</span></span><br></pre></td></tr></table></figure></p>
+<p>5.如果是对象，首先会调用valueOf()方法，然后确定返回值是否能够转换成数值。如果不能，则基于这个返回值再调用toString()方法，再测试返回值。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box=&#123;</span><br><span class="line">toString : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;  <span class="comment">//如果有valueOf : function()&#123;&#125; 就先调用这个</span></span><br><span class="line"><span class="keyword">return</span><span class="string">'123'</span>;      <span class="comment">//可以改成return 'Lee' 查看效果</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line">alert(<span class="built_in">Number</span>(box));     <span class="comment">//123</span></span><br></pre></td></tr></table></figure></p>
+<p>由于Number()函数在转换字符串时比较复杂且不够合理，因此在处理整数的时候更常用的是parseInt()。</p>
+<h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><h3 id="字符串类型-string-object对象类型"><a href="#字符串类型-string-object对象类型" class="headerlink" title="字符串类型(string)+(object对象类型)"></a>字符串类型(string)+(object对象类型)</h3><h3 id="字符串类型"><a href="#字符串类型" class="headerlink" title="字符串类型"></a>字符串类型</h3><h3>String 类型包含了一些特殊的字符字面量，也叫转义序列。</h3>
+
+<table>
+<thead>
+<tr>
+<th>字面量</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\n</td>
+<td style="text-align:center">换行</td>
+</tr>
+<tr>
+<td>\t</td>
+<td style="text-align:center">制表 tab</td>
+</tr>
+<tr>
+<td>\b</td>
+<td style="text-align:center">空格   blank</td>
+</tr>
+<tr>
+<td>\f</td>
+<td style="text-align:center">进纸  formfeed</td>
+</tr>
+<tr>
+<td>\</td>
+<td style="text-align:center">斜杠</td>
+</tr>
+<tr>
+<td>\’</td>
+<td style="text-align:center">单引号</td>
+</tr>
+<tr>
+<td>\’’</td>
+<td style="text-align:center">双引号</td>
+</tr>
+<tr>
+<td>\xnn</td>
+<td style="text-align:center">以十六进制代码nn表示的一个字符的(0~F)。例:\x41</td>
+</tr>
+<tr>
+<td>\unnn</td>
+<td style="text-align:center">以十六进制代码nnn表示的一个Unicode字符(0~F)。例:\u03a3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ECMAScript的字符串"><a href="#ECMAScript的字符串" class="headerlink" title="ECMAScript的字符串"></a>ECMAScript的字符串</h3><p>ECMAScript中的字符串是不可变的，也就是说，字符串一旦创建，它们的值就不能改变。要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量。底层原理:<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> var <span class="built_in">box</span>=<span class="string">'Mr.'</span>;</span><br><span class="line">   <span class="built_in">box</span>=<span class="built_in">box</span>+<span class="string">'Lee'</span>;</span><br><span class="line">   alert(<span class="built_in">box</span>);    <span class="comment">//打出来是Mr.Lee</span></span><br><span class="line"><span class="comment">//最开始定义了一个盒子里装的是Mr.然后第二步加一个'Lee'，并没有改变第一个盒子存在形式</span></span><br><span class="line">         <span class="comment">//只是一种形式上的相加</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>　　ECMA-262描述了一组用于操作数据值的运算符，包括一元运算符、布尔运算符、算数运算符、关系运算符、三元运算符、位运算符及赋值运算符</p>
+<h3 id="什么是表达式"><a href="#什么是表达式" class="headerlink" title="什么是表达式"></a>什么是表达式</h3><p>   表达式是ECMAScript中的一个“短语”，解释器会通过计算把它转换成一个值。最简单的表达式是字面量或者变量名。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5.96</span>                        <span class="comment">//数值字面量</span></span><br><span class="line"><span class="string">'Lee'</span>                        <span class="comment">//字符串字面量</span></span><br><span class="line"><span class="literal">true</span>                        <span class="comment">//布尔值字面量</span></span><br><span class="line"><span class="literal">null</span>                        <span class="comment">//空值字面量</span></span><br><span class="line">/Jave/                      <span class="comment">//正则表达式字面量</span></span><br><span class="line">&#123;x:<span class="number">1</span>,y:<span class="number">2</span>&#125;                    <span class="comment">//对象字面量、对象表达式</span></span><br><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]                     <span class="comment">//数组字面量、数组表达式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span><span class="params">(n)</span> </span>&#123;<span class="keyword">return</span> x+y;&#125;       <span class="comment">//函数字面量、函数表达式</span></span><br><span class="line">box                        <span class="comment">//变量</span></span><br><span class="line">当然，还可以通过合并简单的表达式来创建复杂的表达式。比如：</span><br><span class="line">box +<span class="number">5.96</span>                    <span class="comment">//加法运算的的表达式</span></span><br><span class="line"><span class="keyword">typeof</span>(box)                   <span class="comment">//查看数据类型的表达式</span></span><br><span class="line">box &gt;<span class="number">8</span>                       <span class="comment">//逻辑运算表达式</span></span><br><span class="line">通过上面的叙述，我们得知，单一的字面量和组合字面量的运算符都可称为表达式。</span><br></pre></td></tr></table></figure></p>
+<h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">++<span class="built_in">box</span>;  //把<span class="built_in">box</span>累加一个<span class="number">1</span>，相当于<span class="built_in">box</span>=<span class="built_in">box</span>+<span class="number">1</span></span><br><span class="line">--<span class="built_in">box</span>;   //把<span class="built_in">box</span>累减一个<span class="number">1</span>，相当于<span class="built_in">box</span>=<span class="built_in">box</span>-<span class="number">1</span></span><br><span class="line"><span class="built_in">box</span>++;  //同上</span><br><span class="line">Box--;   //同上</span><br></pre></td></tr></table></figure>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><p>ECMAScript定义了5个算数运算符，加减乘除求模（取余）。如果在算数运算的值不是数值，那么后台会先使用Number()转型函数将其转换为数值(隐式转换)。</p>
+<p>1.加法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> box=<span class="number">1</span>+<span class="number">2</span>         <span class="comment">//等于3</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="number">1</span>+<span class="literal">NaN</span>      <span class="comment">//NaN，只要有一个NaN就为NaN</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="literal">Infinity</span>+ <span class="literal">Infinity</span>   <span class="comment">//Infinity    无穷大相加还是无穷大</span></span><br><span class="line"><span class="keyword">var</span> box=-<span class="literal">Infinity</span>+-<span class="literal">Infinity</span>  <span class="comment">//-Infinity</span></span><br><span class="line"><span class="keyword">var</span> box=<span class="number">100</span>+’<span class="number">100</span>’        <span class="comment">//100100，字符串连接符，有字符串就不是加法</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="运算符中表达式与值的关系"><a href="#运算符中表达式与值的关系" class="headerlink" title="运算符中表达式与值的关系"></a>运算符中表达式与值的关系</h3><table>
+<thead>
+<tr>
+<th>表达式</th>
+<th style="text-align:center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>null=undefined</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td>‘NaN’==NaN</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>5=NaN</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>NaN==NaN</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>false==0</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td>true==1</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td>true==2</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>undefined==0</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>null==0</td>
+<td style="text-align:center">false</td>
+</tr>
+<tr>
+<td>‘100’==100</td>
+<td style="text-align:center">true</td>
+</tr>
+<tr>
+<td>‘100’===100</td>
+<td style="text-align:center">false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><p>逻辑运算符通常用于布尔值的操作，一般和关系运算符配合使用，有三个逻辑运算符：逻辑与（AND）、逻辑或（OR）、逻辑非（NOT）。</p>
+<h3 id="逻辑与-amp-amp"><a href="#逻辑与-amp-amp" class="headerlink" title="逻辑与  &amp;&amp;"></a>逻辑与  &amp;&amp;</h3><p>如果两边的操作数有一个操作数不是布尔值的情况下，与运算就不一定返回布尔值，此时，遵循以下规则：<br>1、第一个操作数是对象，则返回第二个操作数；<br>2、第二个操作数是对象，则第一个操作数返回true，才返回第二个操作数，否则返回false；<br>3、有一个操作数是null，则返回null；<br>4、有一个操作数是undefined，则返回undefined。</p>
+<h3 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或   ||"></a>逻辑或   ||</h3><p>如果两边的操作数有一个操作数不是布尔值的情况下，逻辑或运算就不一定返回布尔值，此时，遵循以下规则：<br>1.第一个操作数是对象，则返回第一个操作数。<br>2.第一个操作数的求值结果为false，则返回第二个操作数；<br>3.两个操作数都是对象，则返回第一个操作数；<br>4.两个操作数都是null，则返回null；<br>5.两个操作数都是NaN，则返回NaN；<br>6.两个操作数都是undefined，则返回undefined；</p>
+<p>与逻辑与运算符相似，逻辑或运算符也是短路操作。当第一操作数的求值结果为true，就不会对第二操作数求值了。<br><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">box</span>=<span class="literal">true</span><span class="params">||</span>age;             <span class="comment">//true</span></span><br><span class="line">var <span class="keyword">box</span>=<span class="literal">false</span><span class="params">||</span>age;            <span class="comment">//出错 ，age未定义</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="逻辑非"><a href="#逻辑非" class="headerlink" title="逻辑非"></a>逻辑非</h3><p>逻辑非运算符可以用于任何值。无论这个值是什么数据类型，这个运算符都会返回一个布尔值。它的流程是：先将这个值转换成布尔值，然后取反，规则如下：<br>1.操作数是一个对象，返回false；<br>2.操作数是一个空字符串，返回true；<br>3.操作数是一个非空字符串，返回false；<br>4.操作数是数值0，返回true；<br>5.操作数是任意非0数值（包括infinity），false；<br>6.操作数是null，返回true；<br>7.操作数是NaN，返回true；<br>8.操作数是undefined，返回true；</p>
+<p>使用一次逻辑非运算符，流程是将值转换成布尔值然后取反。<br>而使用两次逻辑非运算符就是将值转换成布尔值取反再取反，<br>相当于对值进行Boolean()转型函数处理<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var box=!!0<span class="comment">;</span></span><br><span class="line">alert (<span class="name">box</span>)<span class="comment">; //false</span></span><br><span class="line">alert(<span class="name">Boolean</span>(<span class="name">box</span>))<span class="comment">;  //false</span></span><br><span class="line">var box1=!!NaN<span class="comment">;</span></span><br><span class="line">alert(<span class="name">box11</span>)<span class="comment">;    //false</span></span><br><span class="line">alert(<span class="name">Boolean</span>(<span class="name">box1</span>))<span class="comment">;  //false</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h3><p>这个概念内容有点多,ECMA位运算符,详见W3C<a href="http://www.w3school.com.cn/js/pro_js_operators_bitwise.asp" target="_blank" rel="external">位运算</a></p>
+<h3 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h3><p> </p><h3>逗号运算符 逗号运算符可以在一条语句中执行多个操作</h3><br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="actionscript"></span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>, b = <span class="number">20</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CommaTest</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="keyword">return</span> a++, b++, <span class="number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = CommaTest();</span><br><span class="line">alert(a); <span class="comment">// 返回11</span></span><br><span class="line">alert(b); <span class="comment">// 返回21</span></span><br><span class="line">alert(c); <span class="comment">// 返回10</span></span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><p></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="lyjloveDT wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag">#JavaScript</a>
+          
+            <a href="/tags/前端/" rel="tag">#前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/flex布局小结/" rel="next" title="flex布局小结(1)">
+                <i class="fa fa-chevron-left"></i> flex布局小结(1)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/02/JS-二/" rel="prev" title="JS(二)">
+                JS(二) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+            
+  <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="2016/05/30/JS初体验/"
+           data-title="JS初体验" data-url="http://lyjnc.me/2016/05/30/JS初体验/">
+      </div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"imgaylao"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+
+  </div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </main>
+
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lyjloveDT</span>
+  <span>All Rights Reserved.</span>
+</div>
+
+
+        <!--      <font id="sum_counter"></font> -->
+        
+      </div>
+
+    </footer>
+
+      <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/pjax/jquery.pjax.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/nprogress.min.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/mystyle.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/count.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  var algoliaSettings = CONFIG.algolia;
+  var isAlgoliaSettingsValid = algoliaSettings.applicationID &&
+    algoliaSettings.apiKey &&
+    algoliaSettings.indexName;
+
+  if (!isAlgoliaSettingsValid) {
+    window.console.error('Algolia Settings are invalid.');
+    return;
+  }
+
+  var search = instantsearch({
+    appId: algoliaSettings.applicationID,
+    apiKey: algoliaSettings.apiKey,
+    indexName: algoliaSettings.indexName,
+    searchFunction: function (helper) {
+      var searchInput = $('#algolia-search-input').find('input');
+
+      if (searchInput.val()) {
+        helper.search();
+      }
+    }
+  });
+
+  // Registering Widgets
+  [
+    instantsearch.widgets.searchBox({
+      container: '#algolia-search-input',
+      placeholder: algoliaSettings.labels.input_placeholder
+    }),
+
+    instantsearch.widgets.hits({
+      container: '#algolia-hits',
+      hitsPerPage: algoliaSettings.hits.per_page || 10,
+      templates: {
+        item: function (data) {
+          return (
+            '<a href="' + CONFIG.root + data.path + '" class="algolia-hit-item-link">' +
+            data._highlightResult.title.value +
+            '</a>'
+          );
+        },
+        empty: function (data) {
+          return (
+            '<div id="algolia-hits-empty">' +
+            algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query) +
+            '</div>'
+          );
+        }
+      },
+      cssClasses: {
+        item: 'algolia-hit-item'
+      }
+    }),
+
+    instantsearch.widgets.stats({
+      container: '#algolia-stats',
+      templates: {
+        body: function (data) {
+          var stats = algoliaSettings.labels.hits_stats
+            .replace(/\$\{hits}/, data.nbHits)
+            .replace(/\$\{time}/, data.processingTimeMS);
+          return (
+            stats +
+            '<span class="algolia-powered">' +
+            '  <img src="' + CONFIG.root + 'images/algolia_logo.svg" alt="Algolia" />' +
+            '</span>' +
+            '<hr />'
+          );
+        }
+      }
+    }),
+
+    instantsearch.widgets.pagination({
+      container: '#algolia-pagination',
+      scrollTo: false,
+      showFirstLast: false,
+      labels: {
+        first: '<i class="fa fa-angle-double-left"></i>',
+        last: '<i class="fa fa-angle-double-right"></i>',
+        previous: '<i class="fa fa-angle-left"></i>',
+        next: '<i class="fa fa-angle-right"></i>'
+      },
+      cssClasses: {
+        root: 'pagination',
+        item: 'pagination-item',
+        link: 'page-number',
+        active: 'current',
+        disabled: 'disabled-item'
+      }
+    })
+  ].forEach(search.addWidget, search);
+
+  search.start();
+
+  $('.popup-trigger').on('click', function(e) {
+    e.stopPropagation();
+    $('body').append('<div class="popoverlay">').css('overflow', 'hidden');
+    $('.popup').toggle();
+    $('#algolia-search-input').find('input').focus();
+  });
+
+  $('.popup-btn-close').click(function(){
+    $('.popup').hide();
+    $('.popoverlay').remove();
+    $('body').css('overflow', '');
+  });
+
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    if ( $('#local-search-input').size() === 0) {
+      return;
+    }
+
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = true;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = data.url;
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '' && data_content != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title < 0 && index_content < 0 ){
+                      isMatch = false;
+                    } else {
+                      if (index_content < 0) {
+                        index_content = 0;
+                      }
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+
+
+
+
+<a href="https://github.com/lyj505"><img style="position: absolute; top: 0; right: 0; border: 0;height:80px;width:80px;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1031 @@
+<!doctype html>
+<html>
+<head>
+<meta name="baidu-site-verification" content="T1DymlrMyg" />
+<meta name="google-site-verification" content="8_kky-R3LwbIRThdxPCE0hOPmITxkyTwO_vwgFNC_xs" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="Hello,Font-End" />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lyjBlog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/123.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="JS基础(二)流程控制语句分支语句
+条件分支语句  if(){}else{}2.多重分支语句,用于多个值相等的比较。 switch(){case n: …}
+
+循环语句
+for循环,是一种先判断,后运行的循环语句。但它具有执行循环前初始变量和定义循环后要执行代码的能力 for(;;;){}
+for in语句,是一种精准的迭代语句，可以用来枚举对象的属性。for(x in y){};一般是迭代y里面">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS(二)">
+<meta property="og:url" content="http://lyjnc.me/2016/06/02/JS-二/index.html">
+<meta property="og:site_name" content="lyjBlog">
+<meta property="og:description" content="JS基础(二)流程控制语句分支语句
+条件分支语句  if(){}else{}2.多重分支语句,用于多个值相等的比较。 switch(){case n: …}
+
+循环语句
+for循环,是一种先判断,后运行的循环语句。但它具有执行循环前初始变量和定义循环后要执行代码的能力 for(;;;){}
+for in语句,是一种精准的迭代语句，可以用来枚举对象的属性。for(x in y){};一般是迭代y里面">
+<meta property="og:updated_time" content="2016-06-02T08:22:58.613Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS(二)">
+<meta name="twitter:description" content="JS基础(二)流程控制语句分支语句
+条件分支语句  if(){}else{}2.多重分支语句,用于多个值相等的比较。 switch(){case n: …}
+
+循环语句
+for循环,是一种先判断,后运行的循环语句。但它具有执行循环前初始变量和定义循环后要执行代码的能力 for(;;;){}
+for in语句,是一种精准的迭代语句，可以用来枚举对象的属性。for(x in y){};一般是迭代y里面">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: "",
+    fancybox: false,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    root: '/',
+    algolia: {
+          applicationID: 'N5BB54Q7CK',
+          apiKey: 'cd33d69bf490ade81e58f08fd7bd2c7e',
+          indexName: 'lyjnc',
+          hits: {"per_page":5},
+          labels: {"input_placeholder":"搜索...","hits_empty":"未发现与 「${query}」相关的内容","hits_stats":"${hits} 条相关条目，使用了 ${time} 毫秒"}
+        }
+  };
+</script>
+
+
+  <title> JS(二) | lyjBlog </title>
+</head>
+
+<body>
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  <div class="container one-collumn  page-post-detail ">
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <script>var duoshuoQuery = {short_name:"imgaylao"};</script>
+<script src="http://static.duoshuo.com/embed.js"></script>
+
+<script src="http://7vzqg8.com1.z0.glb.clouddn.com/cdn/firebase/2.2.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBSw4nnhSh4AgAkZJfxxjstjLXo1dqpE5E",
+    authDomain: "project-8697214803948885730.firebaseapp.com",
+    databaseURL: "https://project-8697214803948885730.firebaseio.com",
+    storageBucket: "",
+  };
+  Firebase.initializeApp(config);
+</script>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lyjBlog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+             <div style="width:80%;margin:0 auto;height:10px;">
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=22768523&auto=0&height=66"></iframe></div>
+      </div>
+ 
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="lyjloveDT" />
+          <p class="site-author-name" itemprop="name">lyjloveDT</p>
+          <p class="site-description motion-element" itemprop="description">Only One Life To Live!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element ">
+
+              <span class="links-of-author-item">
+                <a href="https://github.com/lyj505" target="_blank" rel="external nofollow">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+              </span>
+
+              <span class="links-of-author-item">
+                <a href="http://steamcommunity.com/profiles/76561198098519946/" target="_blank" rel="external nofollow">
+                    <i class="fa fa-steam"></i> Steam
+                </a>
+              </span>
+
+
+
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JS基础-二"><span class="nav-number">1.</span> <span class="nav-text">JS基础(二)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#流程控制语句"><span class="nav-number">1.1.</span> <span class="nav-text">流程控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分支语句"><span class="nav-number">1.1.1.</span> <span class="nav-text">分支语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-number">1.1.2.</span> <span class="nav-text">循环语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#控制结构"><span class="nav-number">1.1.3.</span> <span class="nav-text">控制结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他语句"><span class="nav-number">1.1.4.</span> <span class="nav-text">其他语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数声明"><span class="nav-number">1.2.1.</span> <span class="nav-text">函数声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#return返回值"><span class="nav-number">1.2.2.</span> <span class="nav-text">return返回值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arguments对象"><span class="nav-number">1.2.3.</span> <span class="nav-text">arguments对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象和数组"><span class="nav-number">1.3.</span> <span class="nav-text">对象和数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Object类型"><span class="nav-number">1.3.1.</span> <span class="nav-text">Object类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Array类型-数组-对象类型"><span class="nav-number">1.3.2.</span> <span class="nav-text">Array类型(数组,对象类型)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#时间与日期"><span class="nav-number">1.4.</span> <span class="nav-text">时间与日期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#返回当前时间与日期"><span class="nav-number">1.4.1.</span> <span class="nav-text">返回当前时间与日期</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.5.</span> <span class="nav-text">正则表达式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#测试正则表达式"><span class="nav-number">1.5.1.</span> <span class="nav-text">测试正则表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.6.</span> <span class="nav-text">RegExp对象的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number">1.7.</span> <span class="nav-text">test()和exec()方法，String对象也提供了4个使用正则表达式的方法。</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+
+    </header>
+
+
+
+    <main id="main" class="main" style="margin-top: 100px;">
+      <div class="main-inner">
+      <!--关闭本页访问数-->
+         <!--  <div id="detail_counter" style="text-align:center;"></div> -->
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS(二)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-02T16:18:59+08:00" content="2016-06-02">
+              2016-06-02
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JS基础-二"><a href="#JS基础-二" class="headerlink" title="JS基础(二)"></a>JS基础(二)</h1><h2 id="流程控制语句"><a href="#流程控制语句" class="headerlink" title="流程控制语句"></a>流程控制语句</h2><h3 id="分支语句"><a href="#分支语句" class="headerlink" title="分支语句"></a>分支语句</h3><ol>
+<li>条件分支语句  if(){}else{}<br>2.多重分支语句,用于多个值相等的比较。 switch(){case n: …}</li>
+</ol>
+<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ol>
+<li>for循环,是一种先判断,后运行的循环语句。但它具有执行循环前初始变量和定义循环后要执行代码的能力 for(;;;){}</li>
+<li>for in语句,是一种精准的迭代语句，可以用来枚举对象的属性。for(x in y){};一般是迭代y里面的属性<br>3.while语句,一种先判断，后运行的循环语句。while(){}<br>4.do while语句,是一种先运行，后判断的循环语句。也就是说，不管条件是否满足，至少先运行一次循环体。do{}while()</li>
+</ol>
+<h3 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h3><ul>
+<li>break 和continue语句用于在循环中精确地控制代码的执行</li>
+</ul>
+<ol>
+<li>continue 继续执行语句。退出当前循环，继续后面的循环。</li>
+<li>break    终端执行语句。立即退出循环，强制继续执行循环后面的语句</li>
+<li>return   函数返回语句。</li>
+<li>throw    异常触发语句。</li>
+<li>try{}catch(){}finally  异常捕获处理。</li>
+</ol>
+<h3 id="其他语句"><a href="#其他语句" class="headerlink" title="其他语句"></a>其他语句</h3><p>with语句,将代码的作用域设置到一个特定的对象中,with(){}。<br> <a id="more"></a></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h3><p>函数对任何语言来说都是一个核心的概念。通过函数可以封装任何多条语句，而且可以在任何地方、任何时候调用执行。ECMAScript中的函数使用function关键字来声明，后跟一组参数以及函数体。<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span><span class="params">()</span></span>&#123;            <span class="comment">//函数的声明已完成;box里没有参数，就是没有参数的函数声明</span></span><br><span class="line">alert(<span class="string">'我只有被调用才可以执行'</span>); <span class="comment">//函数本身没有运行功能</span></span><br><span class="line">&#125;                                <span class="comment">//必须调用才可以执行</span></span><br><span class="line">box();                          <span class="comment">//这样才会被调用，这个调用的位置可以放在function之前</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="return返回值"><a href="#return返回值" class="headerlink" title="return返回值"></a>return返回值</h3><p>带参和不带参的函数，都没有定义返回值，而是调用后直接执行的。实际上，任何函数都可以通过return语句跟后面的要返回来的值来实现返回值。</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">box</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">&#125;                    <span class="comment">//打印出的结果是10，</span></span><br><span class="line"> alert(box());       <span class="comment">//当一个函数遇到第一个return就会终止后面的return</span></span><br><span class="line">                     <span class="comment">//即使第一个return没有数值，也会直接打出undefined</span></span><br></pre></td></tr></table></figure>
+<h3 id="arguments对象"><a href="#arguments对象" class="headerlink" title="arguments对象"></a>arguments对象</h3><p>ECMAScript函数不介意传递进来多少参数，也不会因为参数不同意而错误。实际上，函数体内可以通过arguments对象来接受传递进来的参数。利用它我们可以利用length这个属性，来智能的判断有多少参数，然后把参数进行合理的应用。</p>
+<h2 id="对象和数组"><a href="#对象和数组" class="headerlink" title="对象和数组"></a>对象和数组</h2><p>什么是对象，其实就是一种类型，即引用类型。而对象的值就是引用类型的实例。在ECMAScript中引用类型是一种数据结构，用于将数据和功能组织在一起。”它”也常被称做为类，但ECMAScript中却没有这种东西。虽然ECMAScript是一门面向对象的语言，却不具备传统面向对象语言所支持的类和接口的那个基本结构。</p>
+<h3 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h3><p>到目前为止，我们使用的引用类型最多的可能就是Object类型了。虽然Object的实例不具备多少功能，但对于在应用程序中的存储和传输数据而言，它确实是非常理想的选择。创建object类型有两种。一种是使用new运算符，一种是字面量表达法。<br>在实际开发过程中，一般我们更加喜欢字面量的声明方式。因为它清晰，语法代码少，而且还给人一种封装的感觉。字面量也是向函数传递大量可选参数的首选方式。</p>
+<h3 id="Array类型-数组-对象类型"><a href="#Array类型-数组-对象类型" class="headerlink" title="Array类型(数组,对象类型)"></a>Array类型(数组,对象类型)</h3><p>除了Object类型之外，Array类型是ECMAScript最常用的类型。而且ECMAScript中的Array类型和其他语言中的数组有很大的区别。虽然数组都是有序排列，<strong>但ECMAScript中的数组每个元素可以保存任何类型。</strong>ECMAScript中数组的大小也是可以调整的。创建array类型有2种方式：第一种是new运算符。第二种是字面量。<br>PS:数组最多可包含4294967295个元素，超出即会发生异常。</p>
+<p>1.使用join分隔符方法。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">box</span>=[<span class="string">'lyj'</span>,<span class="number">23</span>,<span class="string">'计算机编程'</span>];</span><br><span class="line">alert(<span class="built_in">box</span>.<span class="built_in">join</span>(<span class="string">'|'</span>));             <span class="comment">//lyj|23|计算机编程</span></span><br></pre></td></tr></table></figure></p>
+<p>2.输出数组内元素的方法。<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var box=[</span><br><span class="line">&#123;</span><br><span class="line">name:'lyj',</span><br><span class="line">  age:23</span><br><span class="line">&#125;];</span><br><span class="line">alert(box[0].age);       //输出的是数组内第一个元素的age属性值。</span><br><span class="line">alert(box[<span class="string">0</span>][<span class="symbol">'age'</span>]);   // 这样也可以输出23，记得要加引号,相当于获取第一个元素内有一个字符串为age的属性值。</span><br></pre></td></tr></table></figure></p>
+<p>3.数组的几个方法。<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">box</span>=[<span class="string">'lyj'</span>,<span class="number">23</span>,<span class="string">'计算机编程'</span>];  <span class="comment">//字面量声明</span></span><br><span class="line">alert(<span class="built_in">box</span>.push(<span class="string">'重庆'</span>));   <span class="comment">//数组末尾添加一个元素，并返回数组的最新"长度"，</span></span><br><span class="line">alert(<span class="built_in">box</span>);           <span class="comment">//查看数组</span></span><br><span class="line">alert(<span class="built_in">box</span>.pop());      <span class="comment">//移除数组末尾元素，并返回移除的元素(最后一个)</span></span><br><span class="line">alert(<span class="built_in">box</span>);   <span class="comment">//查看元素</span></span><br><span class="line"></span><br><span class="line">var <span class="built_in">box</span>=[<span class="string">'lyj'</span>,<span class="number">23</span>,<span class="string">'计算机编程'</span>];  <span class="comment">//字面量声明</span></span><br><span class="line"><span class="built_in">box</span>.<span class="built_in">reverse</span>();  <span class="comment">// 方法执行后，返回一个逆序后的数组，原数组也被逆向排序了</span></span><br><span class="line">alert(<span class="built_in">box</span>);</span><br><span class="line"><span class="built_in">box</span>.<span class="built_in">sort</span>();  <span class="comment">//从小到大排序，23，lyj，计算机编程，也是返回的一个有序数组。它不像之前字符串连接那样,要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量。这个数组是直接改变了</span></span><br><span class="line">alert(<span class="built_in">box</span>);</span><br><span class="line"></span><br><span class="line">var <span class="built_in">box</span>=[<span class="string">'lyj'</span>,<span class="number">23</span>,<span class="string">'重庆'</span>];</span><br><span class="line">   var box2=<span class="built_in">box</span>.<span class="built_in">concat</span>(<span class="string">'计算机编程'</span>);  <span class="comment">//在后面添加的</span></span><br><span class="line">   alert(box2);</span><br><span class="line">   alert(typeof box2);     <span class="comment">//object</span></span><br><span class="line">   alert(<span class="built_in">box</span>);         <span class="comment">//原来的数组没有变化 还是之前的,上面的数组就被改变了</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="时间与日期"><a href="#时间与日期" class="headerlink" title="时间与日期"></a>时间与日期</h2><h3 id="返回当前时间与日期"><a href="#返回当前时间与日期" class="headerlink" title="返回当前时间与日期"></a>返回当前时间与日期</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var <span class="built_in">box</span>=<span class="keyword">new</span> Date();</span><br><span class="line">box1=<span class="built_in">box</span>.getMonth()+<span class="number">1</span>;</span><br><span class="line">alert(<span class="built_in">box</span>.getFullYear()+<span class="string">'-'</span>+box1+<span class="string">'-'</span>+<span class="built_in">box</span>.getDate()+<span class="string">" "</span>+<span class="built_in">box</span>.getHours()+<span class="string">':'</span>+<span class="built_in">box</span>.getMinutes()+<span class="string">':'</span>+<span class="built_in">box</span>.getSeconds()+<span class="string">'星期'</span>+<span class="built_in">box</span>.getDay());</span><br></pre></td></tr></table></figure>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>什么是正则表达式：它是一个描述字符模式的对象。ECMAscript的RegExp类表示正则表达式，而String和RegExp都定义了使用正则表达式进行强大的模式匹配和文本检索与替换的函数。<br>正则表达式主要用来验证客户端的输入数据：<br>用户填写完表单单击按钮之后，表单就会被发送到服务器，在服务器端通常会用PHP、ASP、.NET等服务器脚本对其进行进一步地处理，因为客户端验证，可以节约大量的服务器端的系统资源，并提供更好的用户体验<br>有2种格式:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> pattern=<span class="regexp">/box/i</span>; <span class="comment">//使用字面量的正则</span></span><br><span class="line"><span class="keyword">var</span> pattern=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">'box'</span>,<span class="string">'i'</span>);<span class="comment">//Reg模式</span></span><br><span class="line">方法:</span><br><span class="line">alert(pattern.test(str));   <span class="comment">//模式.测试(字符串)</span></span><br><span class="line">alert(<span class="regexp">/Box/i</span>.test(<span class="string">'box'</span>));  <span class="comment">//显示true这种也可以</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="测试正则表达式"><a href="#测试正则表达式" class="headerlink" title="测试正则表达式"></a>测试正则表达式</h3>  <h2>RegExp对象的方法</h2>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:center">功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>test</td>
+<td style="text-align:center">在字符串中测试模式匹配，返回true或false（布尔类型）</td>
+</tr>
+<tr>
+<td>exec</td>
+<td style="text-align:center">在字符串中执行匹配搜索，返回结果数组（对象Object类型）或者null</td>
+</tr>
+</tbody>
+</table>
+  <h2>test()和exec()方法，String对象也提供了4个使用正则表达式的方法。</h2>
+
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>match(pattern)(匹配)</td>
+<td style="text-align:center">返回pattern中的子串或null</td>
+</tr>
+<tr>
+<td>replace(pattern,replacement)(替换)</td>
+<td style="text-align:center">用replacement替换pattern</td>
+</tr>
+<tr>
+<td>search(pattern)(搜寻)</td>
+<td style="text-align:center">返回字符串中pattern开始位置</td>
+</tr>
+<tr>
+<td>split(pattern)(分离)</td>
+<td style="text-align:center">返回字符串按指定pattern拆分的数组</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="lyjloveDT wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/30/JS初体验/" rel="next" title="JS初体验">
+                <i class="fa fa-chevron-left"></i> JS初体验
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/12/题目1/" rel="prev" title="题目">
+                题目 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+            
+  <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="2016/06/02/JS-二/"
+           data-title="JS(二)" data-url="http://lyjnc.me/2016/06/02/JS-二/">
+      </div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"imgaylao"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+
+  </div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </main>
+
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lyjloveDT</span>
+  <span>All Rights Reserved.</span>
+</div>
+
+
+        <!--      <font id="sum_counter"></font> -->
+        
+      </div>
+
+    </footer>
+
+      <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/pjax/jquery.pjax.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/nprogress.min.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/mystyle.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/count.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  var algoliaSettings = CONFIG.algolia;
+  var isAlgoliaSettingsValid = algoliaSettings.applicationID &&
+    algoliaSettings.apiKey &&
+    algoliaSettings.indexName;
+
+  if (!isAlgoliaSettingsValid) {
+    window.console.error('Algolia Settings are invalid.');
+    return;
+  }
+
+  var search = instantsearch({
+    appId: algoliaSettings.applicationID,
+    apiKey: algoliaSettings.apiKey,
+    indexName: algoliaSettings.indexName,
+    searchFunction: function (helper) {
+      var searchInput = $('#algolia-search-input').find('input');
+
+      if (searchInput.val()) {
+        helper.search();
+      }
+    }
+  });
+
+  // Registering Widgets
+  [
+    instantsearch.widgets.searchBox({
+      container: '#algolia-search-input',
+      placeholder: algoliaSettings.labels.input_placeholder
+    }),
+
+    instantsearch.widgets.hits({
+      container: '#algolia-hits',
+      hitsPerPage: algoliaSettings.hits.per_page || 10,
+      templates: {
+        item: function (data) {
+          return (
+            '<a href="' + CONFIG.root + data.path + '" class="algolia-hit-item-link">' +
+            data._highlightResult.title.value +
+            '</a>'
+          );
+        },
+        empty: function (data) {
+          return (
+            '<div id="algolia-hits-empty">' +
+            algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query) +
+            '</div>'
+          );
+        }
+      },
+      cssClasses: {
+        item: 'algolia-hit-item'
+      }
+    }),
+
+    instantsearch.widgets.stats({
+      container: '#algolia-stats',
+      templates: {
+        body: function (data) {
+          var stats = algoliaSettings.labels.hits_stats
+            .replace(/\$\{hits}/, data.nbHits)
+            .replace(/\$\{time}/, data.processingTimeMS);
+          return (
+            stats +
+            '<span class="algolia-powered">' +
+            '  <img src="' + CONFIG.root + 'images/algolia_logo.svg" alt="Algolia" />' +
+            '</span>' +
+            '<hr />'
+          );
+        }
+      }
+    }),
+
+    instantsearch.widgets.pagination({
+      container: '#algolia-pagination',
+      scrollTo: false,
+      showFirstLast: false,
+      labels: {
+        first: '<i class="fa fa-angle-double-left"></i>',
+        last: '<i class="fa fa-angle-double-right"></i>',
+        previous: '<i class="fa fa-angle-left"></i>',
+        next: '<i class="fa fa-angle-right"></i>'
+      },
+      cssClasses: {
+        root: 'pagination',
+        item: 'pagination-item',
+        link: 'page-number',
+        active: 'current',
+        disabled: 'disabled-item'
+      }
+    })
+  ].forEach(search.addWidget, search);
+
+  search.start();
+
+  $('.popup-trigger').on('click', function(e) {
+    e.stopPropagation();
+    $('body').append('<div class="popoverlay">').css('overflow', 'hidden');
+    $('.popup').toggle();
+    $('#algolia-search-input').find('input').focus();
+  });
+
+  $('.popup-btn-close').click(function(){
+    $('.popup').hide();
+    $('.popoverlay').remove();
+    $('body').css('overflow', '');
+  });
+
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    if ( $('#local-search-input').size() === 0) {
+      return;
+    }
+
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = true;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = data.url;
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '' && data_content != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title < 0 && index_content < 0 ){
+                      isMatch = false;
+                    } else {
+                      if (index_content < 0) {
+                        index_content = 0;
+                      }
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+
+
+
+
+<a href="https://github.com/lyj505"><img style="position: absolute; top: 0; right: 0; border: 0;height:80px;width:80px;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+</html>

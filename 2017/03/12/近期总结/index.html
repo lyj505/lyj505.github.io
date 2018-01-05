@@ -1,0 +1,1023 @@
+<!doctype html>
+<html>
+<head>
+<meta name="baidu-site-verification" content="T1DymlrMyg" />
+<meta name="google-site-verification" content="8_kky-R3LwbIRThdxPCE0hOPmITxkyTwO_vwgFNC_xs" />
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <meta name="keywords" content="微信端,web前端," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="lyjBlog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/123.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="工作中少许坑angularJs内存 – 任务管理1.在directive、controller里面,当页面销毁或者指令scope销毁的时候,去除定时器等代码:  123456//删除任何易于内存泄漏的代码。scope.$on(&apos;$destroy&apos;, function () &amp;#123;                 if (scope.modal) &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="遇到的坑(1)">
+<meta property="og:url" content="http://lyjnc.me/2017/03/12/近期总结/index.html">
+<meta property="og:site_name" content="lyjBlog">
+<meta property="og:description" content="工作中少许坑angularJs内存 – 任务管理1.在directive、controller里面,当页面销毁或者指令scope销毁的时候,去除定时器等代码:  123456//删除任何易于内存泄漏的代码。scope.$on(&apos;$destroy&apos;, function () &amp;#123;                 if (scope.modal) &amp;#123;">
+<meta property="og:updated_time" content="2017-04-06T03:00:22.327Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="遇到的坑(1)">
+<meta name="twitter:description" content="工作中少许坑angularJs内存 – 任务管理1.在directive、controller里面,当页面销毁或者指令scope销毁的时候,去除定时器等代码:  123456//删除任何易于内存泄漏的代码。scope.$on(&apos;$destroy&apos;, function () &amp;#123;                 if (scope.modal) &amp;#123;">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: "",
+    fancybox: false,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    root: '/',
+    algolia: {
+          applicationID: 'N5BB54Q7CK',
+          apiKey: 'cd33d69bf490ade81e58f08fd7bd2c7e',
+          indexName: 'lyjnc',
+          hits: {"per_page":5},
+          labels: {"input_placeholder":"搜索...","hits_empty":"未发现与 「${query}」相关的内容","hits_stats":"${hits} 条相关条目，使用了 ${time} 毫秒"}
+        }
+  };
+</script>
+
+
+  <title> 遇到的坑(1) | lyjBlog </title>
+</head>
+
+<body>
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  <div class="container one-collumn  page-post-detail ">
+
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <script>var duoshuoQuery = {short_name:"imgaylao"};</script>
+<script src="http://static.duoshuo.com/embed.js"></script>
+
+<script src="http://7vzqg8.com1.z0.glb.clouddn.com/cdn/firebase/2.2.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBSw4nnhSh4AgAkZJfxxjstjLXo1dqpE5E",
+    authDomain: "project-8697214803948885730.firebaseapp.com",
+    databaseURL: "https://project-8697214803948885730.firebaseio.com",
+    storageBucket: "",
+  };
+  Firebase.initializeApp(config);
+</script>
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">lyjBlog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section" >
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+             <div style="width:80%;margin:0 auto;height:10px;">
+ <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="http://music.163.com/outchain/player?type=2&id=22768523&auto=0&height=66"></iframe></div>
+      </div>
+ 
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.png"
+               alt="lyjloveDT" />
+          <p class="site-author-name" itemprop="name">lyjloveDT</p>
+          <p class="site-description motion-element" itemprop="description">Only One Life To Live!</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">19</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element ">
+
+              <span class="links-of-author-item">
+                <a href="https://github.com/lyj505" target="_blank" rel="external nofollow">
+                    <i class="fa fa-github"></i> GitHub
+                </a>
+              </span>
+
+              <span class="links-of-author-item">
+                <a href="http://steamcommunity.com/profiles/76561198098519946/" target="_blank" rel="external nofollow">
+                    <i class="fa fa-steam"></i> Steam
+                </a>
+              </span>
+
+
+
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#工作中少许坑"><span class="nav-number">1.</span> <span class="nav-text">工作中少许坑</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#angularJs"><span class="nav-number">1.1.</span> <span class="nav-text">angularJs</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#内存-–-任务管理"><span class="nav-number">1.1.1.</span> <span class="nav-text">内存 – 任务管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关于ng-repeat"><span class="nav-number">1.1.2.</span> <span class="nav-text">关于ng-repeat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AngularJS使用-ng-disabled"><span class="nav-number">1.1.3.</span> <span class="nav-text">AngularJS使用 ng-disabled</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular请求缓存"><span class="nav-number">1.1.4.</span> <span class="nav-text">angular请求缓存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ng-if-和-ng-show"><span class="nav-number">1.1.5.</span> <span class="nav-text">ng-if 和 ng-show</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令"><span class="nav-number">1.1.6.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行顺序"><span class="nav-number">1.1.7.</span> <span class="nav-text">执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指令执行顺序"><span class="nav-number">1.1.8.</span> <span class="nav-text">指令执行顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ionic-复制文本问题"><span class="nav-number">1.1.9.</span> <span class="nav-text">ionic 复制文本问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ionic"><span class="nav-number">1.2.</span> <span class="nav-text">ionic</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ionic-右滑删除"><span class="nav-number">1.2.1.</span> <span class="nav-text">ionic 右滑删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移动端分页原理-ionic"><span class="nav-number">1.2.2.</span> <span class="nav-text">移动端分页原理:ionic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信相关"><span class="nav-number">1.3.</span> <span class="nav-text">微信相关</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微信授权登录"><span class="nav-number">1.3.1.</span> <span class="nav-text">微信授权登录:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#angular-SPA单页应用-微信支付时的坑"><span class="nav-number">1.3.2.</span> <span class="nav-text">angular SPA单页应用 微信支付时的坑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#微信授权"><span class="nav-number">1.3.3.</span> <span class="nav-text">微信授权</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决页面回调问题"><span class="nav-number">1.3.4.</span> <span class="nav-text">解决页面回调问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单位"><span class="nav-number">1.4.</span> <span class="nav-text">单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#localstorage"><span class="nav-number">1.5.</span> <span class="nav-text">localstorage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用JS-工具-类"><span class="nav-number">1.6.</span> <span class="nav-text">常用JS 工具/类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#习惯用好TODO-常用代码好习惯"><span class="nav-number">1.7.</span> <span class="nav-text">习惯用好TODO,常用代码好习惯</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+
+    </header>
+
+
+
+    <main id="main" class="main" style="margin-top: 100px;">
+      <div class="main-inner">
+      <!--关闭本页访问数-->
+         <!--  <div id="detail_counter" style="text-align:center;"></div> -->
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                遇到的坑(1)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-12T14:01:13+08:00" content="2017-03-12">
+              2017-03-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ionic/" itemprop="url" rel="index">
+                    <span itemprop="name">ionic</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ionic/angular/" itemprop="url" rel="index">
+                    <span itemprop="name">angular</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ionic/angular/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="工作中少许坑"><a href="#工作中少许坑" class="headerlink" title="工作中少许坑"></a>工作中少许坑</h1><h2 id="angularJs"><a href="#angularJs" class="headerlink" title="angularJs"></a>angularJs</h2><h3 id="内存-–-任务管理"><a href="#内存-–-任务管理" class="headerlink" title="内存 – 任务管理"></a>内存 – 任务管理</h3><p>1.在directive、controller里面,当页面销毁或者指令scope销毁的时候,去除定时器等代码:<br>  <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除任何易于内存泄漏的代码。</span></span><br><span class="line">scope.$on(<span class="string">'$destroy'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">                 <span class="keyword">if</span> (scope.modal) &#123;</span><br><span class="line">                     scope.modal.remove(); <span class="comment">//</span></span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>2.使用directive处理复杂dom操作<br><a id="more"></a></p>
+<h3 id="关于ng-repeat"><a href="#关于ng-repeat" class="headerlink" title="关于ng-repeat"></a>关于ng-repeat</h3><ol>
+<li>更新滑动框（例如，用带有ng-repeat的Angular，调整它里面的元素）。</li>
+<li>处理数据:<br>1.可以通过slice处理数组。<br>arrayObject.slice(start,end);返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br>说明:请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。<br>2.也可以通过ng数组自带内置函数(x in xs | limitTo: 4)。</li>
+<li><p>排序:可以根据orderBy</p>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"user in users | orderBy:user.index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;user.name&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 根据user的index属性来排序 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 倒叙: --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"user in users | orderBy:user.index:'desc'"</span>&gt;</span></span><span class="template-variable">&#123;&#123;user.name&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 或者 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"user in users | orderBy:-user.index"</span>&gt;</span></span><span class="template-variable">&#123;&#123;user.name&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>4.根据索引循环变量<br>有时候遇到报错:’Error: [ngRepeat:dupes]’,ngRepeat不允许collection中存在两个相同Id的对象。<br>处理方法:</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">item</span> <span class="keyword">in</span> <span class="keyword">items</span> track <span class="keyword">by</span> <span class="keyword">item</span>.id。<span class="comment"></span><br><span class="line">//也可以直接拿循环的索引变量$index来用item</span></span><br><span class="line"><span class="keyword">item</span> <span class="keyword">in</span> <span class="keyword">items</span> track <span class="keyword">by</span> $index</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="AngularJS使用-ng-disabled"><a href="#AngularJS使用-ng-disabled" class="headerlink" title="AngularJS使用 ng-disabled"></a>AngularJS使用 ng-disabled</h3><p> 在controller 中增加一个方法<br> disableButton()<br> ng-disabled 会watch页面上指定的元素内容 根绝表单的填写情况来重置提交button 的可用性及其变化颜色。</p>
+<h3 id="angular请求缓存"><a href="#angular请求缓存" class="headerlink" title="angular请求缓存"></a>angular请求缓存</h3><p> $http.get(url, {cache: false}).====》不从缓存中读取 请求。<br>{cache: true}告诉$http service要在$http的默认缓存中缓存特定的请求响应结果<br> 要根据实际需求来设置请求的cache。</p>
+<h3 id="ng-if-和-ng-show"><a href="#ng-if-和-ng-show" class="headerlink" title="ng-if 和 ng-show"></a>ng-if 和 ng-show</h3><p> A common case when this difference is significant is when using css selectors that rely on an element’s position within the DOM, such as the :first-child or:last-child pseudo-classes.<br>  1.ng-if 和ng-show 与ngHide 的不同处是ng-if 完全congdom中删除了,<br>需要重新创建一个dom元素,而不是和它们一样只是控制元素的css visibility 属性。<br>ng-if会移除dom，生成dom，而ng-show只是改变其display属性(应该是visibility属性。。)<br>所以通过ng-show 可以创建动画。。控制display 这么说<br>  2.在初始化页面的时候ng-show 会出现闪现。一般使用ng-if。<br>  3.ng-if会影响并阻断scope绑定值，ngshow不会，建议：div里面有很多其他指令<br>  如ng-model的尽量使用ng-show，单个独立的可以使用ng-if。</p>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>指令3种符号的代表<br>&amp; 方法  =====》在指令中,用来继承使用父作用域对应的方法。<br>@ 属性  =====》在指令中,用来继承使用父作用域对应的属性。<br>= 双向绑定  =====》在指令中,双向绑定变量,在指令中可以读取或改变变量的值,在父作用域也会发生相应的变化。<br>attrs 这个蛮好用的,可以根据封装指定属性,控制属性值,做出可用性强的指令组件。</p>
+<p>link compile 阶段。。—指令形成阶段。。。=============？？？？？？<br>controller app.js directive 的形成阶段。。。============？？？？？？</p>
+<h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p><a href="https://my.oschina.net/brant/blog/419641" target="_blank" rel="external">可以参考下这篇文章理解</a><br>补充一点就是,angular加载对应页面时,会先加载控制器的内容,所以初始化变量,可以选择再控制器中初始化,<br>如有需求,在指令中改变值。</p>
+<h3 id="指令执行顺序"><a href="#指令执行顺序" class="headerlink" title="指令执行顺序"></a>指令执行顺序</h3><p>指令的执行分两个阶段，一个是compile，一个是link。</p>
+<p>link方法一般用来对元素进行处理。这里是对元素进行事件的绑定。当用户元素div进行点击时，会弹出鼠标点击的框。<br>当页面加载进来时，自定义的link不会弹出来。意思就是说，当存在compile时，不会执行你自定义的link函数，<br>因为angular会把compile返回的函数当做link函数来执行。当不存在compile时，就会执行你自定义的link函数。<br>compile函数很少被用到，写起来比较麻烦。<br>compile函数的作用是对指令的模板进行转换，compile函数就把指令的模板进行了叠加，<br>改变了页面上的DOM结构。<br>link函数的作用是在模型和视图之间建立关联，同时在元素上绑定事件监听。<br>scope在链接阶段才会被绑定到元素上，因此在compile中操作scope会报错。</p>
+<h3 id="ionic-复制文本问题"><a href="#ionic-复制文本问题" class="headerlink" title="ionic 复制文本问题"></a>ionic 复制文本问题</h3><p>  在容器上增加这个类<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.selectable &#123;</span><br><span class="line">    -webkit-user-select: auto;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!-- 电脑端可以复制文字了。。 --&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="ionic"><a href="#ionic" class="headerlink" title="ionic"></a>ionic</h2><h3 id="ionic-右滑删除"><a href="#ionic-右滑删除" class="headerlink" title="ionic 右滑删除"></a>ionic 右滑删除</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;ion-<span class="built_in">list</span>&gt;</span><br><span class="line">            &lt;ion-<span class="built_in">item</span>  <span class="built_in">class</span>=<span class="string">"item item-thumbnail-left shop-car-item "</span> ng-<span class="keyword">repeat</span>=<span class="string">"item in shopCar.items"</span>&gt;</span><br><span class="line">                &lt;ion-option-button <span class="built_in">class</span>=<span class="string">"button-assertive"</span></span><br><span class="line">                                   ng-click=<span class="string">"Delete(item)"</span>&gt;</span><br><span class="line">                    删除</span><br><span class="line">                &lt;/ion-option-button&gt;</span><br><span class="line">            &lt;/ion-<span class="built_in">item</span> &gt;</span><br><span class="line">            &lt;/ion-<span class="built_in">list</span>&gt;</span><br></pre></td></tr></table></figure>
+<p>注:在Delete 方法里面绑定删除的方法。。。</p>
+<h3 id="移动端分页原理-ionic"><a href="#移动端分页原理-ionic" class="headerlink" title="移动端分页原理:ionic"></a>移动端分页原理:ionic</h3><p>1.用户往下滑动刷新。<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- html::::</span><br><span class="line">当用户到达页脚或页脚附近时，ionInfiniteScroll指令允许你调用一个函数 。</span><br><span class="line">当用户滚动的距离超出底部的内容时，就会触发你指定的on-infinite。</span><br><span class="line">ng-if就可以用一个简单的方法阻止无限滚动</span><br><span class="line"> icon="ion-loading-c" 当加载时显示的图标。默认: 'ion-loading-d'。</span><br><span class="line">--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">ion-infinite-scroll</span></span><br><span class="line">                <span class="attr">ng-if</span>=<span class="string">"more"</span></span><br><span class="line">                <span class="attr">on-infinite</span>=<span class="string">"loadNext()"</span></span><br><span class="line">                <span class="attr">distance</span>=<span class="string">"1%"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ion-infinite-scroll</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 在controller里控制more的值:::::::: --&gt;</span></span><br><span class="line">   function loadNext()&#123;</span><br><span class="line">   <span class="comment">&lt;!-- 业务逻辑 每执行一次loadNext,对应的page增加1--&gt;</span></span><br><span class="line">   $scope.limit = 10;</span><br><span class="line">   $scope.page + 1;</span><br><span class="line">   $scope.more = canBeLoaded();</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   function canBeLoaded()&#123;</span><br><span class="line">        return ($scope.page * $scope.limit <span class="tag">&lt; $<span class="attr">scope.total</span>);</span><br><span class="line">        //阻止无限滚动,当前页数*每页限制数量小于当前查询条件下的总量的时候,</span><br><span class="line">        就可以继续往下滚动,出发查询事件</span><br><span class="line">        //当前页数*每页限制数量大于当前查询条件下的总量的时候,//即不需要滑动了,则返回一个<span class="attr">false</span>,阻止滑动。</span><br><span class="line">   &#125;</span></span><br></pre></td></tr></table></figure></p>
+<p>2.在最下方有个”加载更多”的按钮,手动点击触发刷新事件。<br>其实就是不使用ionic封装的’ion-infinite-scroll’指令,在顶部手动添加一个元素,根据能否出现加载更多来展示按钮<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 当总量小于当前页数*每页限制,说明已经显示完毕了 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-if</span>=<span class="string">"total &gt; page* limit"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"button"</span> <span class="attr">ng-click</span>=<span class="string">"loadNext()"</span>&gt;</span>加载更多<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="微信相关"><a href="#微信相关" class="headerlink" title="微信相关"></a>微信相关</h2><h3 id="微信授权登录"><a href="#微信授权登录" class="headerlink" title="微信授权登录:"></a>微信授权登录:</h3><p>1.静默授权。 ====================？<br>2.获取用户信息授权。================？</p>
+<h3 id="angular-SPA单页应用-微信支付时的坑"><a href="#angular-SPA单页应用-微信支付时的坑" class="headerlink" title="angular SPA单页应用 微信支付时的坑"></a>angular SPA单页应用 微信支付时的坑</h3><p>在前端页面调用微信支付时候,使用ios微信操作时,报”当前页面的URL未注册”,Android正常。<br>经过测试,对于业务来说,因为支付页面需要通过不同的支付id进入不同的支付页面,所以当,ios操作时,<br>虽然路由发生了变化,但是在微信浏览器里没有识别出原先配置好的支付地址,而android机能够识别。</p>
+<p>当时使用了一个很不友好的方法,解决问题:当进入支付页面controller的时候主动的执行”window.location.reload();”,<br>刷新一次页面…ios就能够正确地识别支付URL。<br>当然后面可以去掉 angular应用中的’#’,也可以解决这个问题。支付未能正确识别,最终还是URL的问题。</p>
+<h3 id="微信授权"><a href="#微信授权" class="headerlink" title="微信授权"></a>微信授权</h3><p>1、以snsapi_base为scope发起的网页授权，是用来获取进入页面的用户的openid的，并且是静默授权并自动跳转到回调页的。用户感知的就是直接进入了回调页（往往是业务页面）<br>2、以snsapi_userinfo为scope发起的网页授权，是用来获取用户的基本信息的。但这种授权需要用户手动同意，并且由于用户同意过，所以无须关注，就可在授权后获取该用户的基本信息。<br>3、用户管理类接口中的“获取用户基本信息接口”，是在用户和公众号产生消息交互或关注后事件推送后，才能根据用户OpenID来获取用户基本信息。这个接口，包括其他微信接口，都是需要该用户（即openid）关注了公众号后，才能调用成功的。</p>
+<h3 id="解决页面回调问题"><a href="#解决页面回调问题" class="headerlink" title="解决页面回调问题"></a>解决页面回调问题</h3><p>经过微信回调后URL变成:<br>‘//<a href="http://xxxx.com/xxx/?code=0031J8QD06l2Vf2BMQRD0GX5QD01J8Qs&amp;state=money#/me/xxxx" target="_blank" rel="external">http://xxxx.com/xxx/?code=0031J8QD06l2Vf2BMQRD0GX5QD01J8Qs&amp;state=money#/me/xxxx</a>‘<br>通过angular的方法是取不出来的(‘$stateParams.code’),因为该方法只能取警号之后的参数。<br>使用:<br><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">var</span> curHref = window.location.href;</span><br><span class="line">      <span class="built_in">var</span> codeValue = curHref.<span class="built_in">substring</span>(curHref.indexOf(<span class="string">"code="</span>),curHref.indexOf(<span class="string">"&amp;"</span>));</span><br><span class="line">      codeValue = codeValue.<span class="built_in">substring</span>(codeValue.indexOf(<span class="string">"="</span>)+<span class="number">1</span>,codeValue.<span class="built_in">length</span>);</span><br></pre></td></tr></table></figure></p>
+<h2 id="单位"><a href="#单位" class="headerlink" title="单位"></a>单位</h2><p>数据库存的是分<br>给用户显示的需要*100 转化成 元。(根据实际需求去封装一个可用性函数);</p>
+<p> 规定时间:<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>   beginTime = <span class="string">'2016-12-09 15:00:00'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span>   endTime = <span class="string">'2016-12-14 23:59:59'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>关于数据,如果不清楚后台返回的数据库组成,则每次判断一下是否为空,再赋值,不然会报错,该属性不存在。</p>
+<h2 id="localstorage"><a href="#localstorage" class="headerlink" title="localstorage"></a>localstorage</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//存对应key进本地存储</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">saveLocalStorage</span>(<span class="params">key, obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.localStorage) &#123;</span><br><span class="line">        <span class="built_in">window</span>.localStorage.setItem(key, (<span class="keyword">typeof</span> obj === <span class="string">'string'</span>) ? obj : <span class="built_in">JSON</span>.stringify(obj));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//获取本地本地存储数据</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">getLocalStorage</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.localStorage) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">window</span>.localStorage.getItem(key);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//清空本地某个key对应的本地存储数据</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeLocalStorage</span>(<span class="params">key</span>)</span>&#123;</span><br><span class="line">localStorage.removeItem(key);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//批量删除所有本地存储数据</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">ClearAllLocalStorage</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"> localStorage.clear();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="常用JS-工具-类"><a href="#常用JS-工具-类" class="headerlink" title="常用JS 工具/类"></a>常用JS 工具/类</h2><h2 id="习惯用好TODO-常用代码好习惯"><a href="#习惯用好TODO-常用代码好习惯" class="headerlink" title="习惯用好TODO,常用代码好习惯"></a>习惯用好TODO,常用代码好习惯</h2><p><a href="http://codeguide.bootcss.com/#html-syntax" target="_blank" rel="external">可以参考下这篇文章理解</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block； padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/uploads/wechat-qcode.jpg" alt="lyjloveDT wechat" style="width: 200px; max-width: 100%;"/>
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/微信端/" rel="tag">#微信端</a>
+          
+            <a href="/tags/web前端/" rel="tag">#web前端</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/06/I-m-so-stupid-Fuck-myself/" rel="next" title="自己的错">
+                <i class="fa fa-chevron-left"></i> 自己的错
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/20/basic-use-md/" rel="prev" title="basic use of md">
+                basic use of md <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+            
+  <div class="comments" id="comments">
+      <div class="ds-thread" data-thread-key="2017/03/12/近期总结/"
+           data-title="遇到的坑(1)" data-url="http://lyjnc.me/2017/03/12/近期总结/">
+      </div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"imgaylao"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.unstable.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+
+  </div>
+
+
+
+
+
+        </div>
+
+      </div>
+    </main>
+
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">lyjloveDT</span>
+  <span>All Rights Reserved.</span>
+</div>
+
+
+        <!--      <font id="sum_counter"></font> -->
+        
+      </div>
+
+    </footer>
+
+      <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/pjax/jquery.pjax.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/nprogress.min.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/mystyle.js"></script>
+
+  
+  <script type="text/javascript" src="/vendors/mystyle/count.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  <script src="http://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function () {
+  var algoliaSettings = CONFIG.algolia;
+  var isAlgoliaSettingsValid = algoliaSettings.applicationID &&
+    algoliaSettings.apiKey &&
+    algoliaSettings.indexName;
+
+  if (!isAlgoliaSettingsValid) {
+    window.console.error('Algolia Settings are invalid.');
+    return;
+  }
+
+  var search = instantsearch({
+    appId: algoliaSettings.applicationID,
+    apiKey: algoliaSettings.apiKey,
+    indexName: algoliaSettings.indexName,
+    searchFunction: function (helper) {
+      var searchInput = $('#algolia-search-input').find('input');
+
+      if (searchInput.val()) {
+        helper.search();
+      }
+    }
+  });
+
+  // Registering Widgets
+  [
+    instantsearch.widgets.searchBox({
+      container: '#algolia-search-input',
+      placeholder: algoliaSettings.labels.input_placeholder
+    }),
+
+    instantsearch.widgets.hits({
+      container: '#algolia-hits',
+      hitsPerPage: algoliaSettings.hits.per_page || 10,
+      templates: {
+        item: function (data) {
+          return (
+            '<a href="' + CONFIG.root + data.path + '" class="algolia-hit-item-link">' +
+            data._highlightResult.title.value +
+            '</a>'
+          );
+        },
+        empty: function (data) {
+          return (
+            '<div id="algolia-hits-empty">' +
+            algoliaSettings.labels.hits_empty.replace(/\$\{query}/, data.query) +
+            '</div>'
+          );
+        }
+      },
+      cssClasses: {
+        item: 'algolia-hit-item'
+      }
+    }),
+
+    instantsearch.widgets.stats({
+      container: '#algolia-stats',
+      templates: {
+        body: function (data) {
+          var stats = algoliaSettings.labels.hits_stats
+            .replace(/\$\{hits}/, data.nbHits)
+            .replace(/\$\{time}/, data.processingTimeMS);
+          return (
+            stats +
+            '<span class="algolia-powered">' +
+            '  <img src="' + CONFIG.root + 'images/algolia_logo.svg" alt="Algolia" />' +
+            '</span>' +
+            '<hr />'
+          );
+        }
+      }
+    }),
+
+    instantsearch.widgets.pagination({
+      container: '#algolia-pagination',
+      scrollTo: false,
+      showFirstLast: false,
+      labels: {
+        first: '<i class="fa fa-angle-double-left"></i>',
+        last: '<i class="fa fa-angle-double-right"></i>',
+        previous: '<i class="fa fa-angle-left"></i>',
+        next: '<i class="fa fa-angle-right"></i>'
+      },
+      cssClasses: {
+        root: 'pagination',
+        item: 'pagination-item',
+        link: 'page-number',
+        active: 'current',
+        disabled: 'disabled-item'
+      }
+    })
+  ].forEach(search.addWidget, search);
+
+  search.start();
+
+  $('.popup-trigger').on('click', function(e) {
+    e.stopPropagation();
+    $('body').append('<div class="popoverlay">').css('overflow', 'hidden');
+    $('.popup').toggle();
+    $('#algolia-search-input').find('input').focus();
+  });
+
+  $('.popup-btn-close').click(function(){
+    $('.popup').hide();
+    $('.popoverlay').remove();
+    $('body').css('overflow', '');
+  });
+
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    if ( $('#local-search-input').size() === 0) {
+      return;
+    }
+
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = true;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = data.url;
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '' && data_content != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title < 0 && index_content < 0 ){
+                      isMatch = false;
+                    } else {
+                      if (index_content < 0) {
+                        index_content = 0;
+                      }
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+  
+  
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+
+
+
+
+
+<a href="https://github.com/lyj505"><img style="position: absolute; top: 0; right: 0; border: 0;height:80px;width:80px;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+</body>
+</html>
