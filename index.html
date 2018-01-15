@@ -1569,8 +1569,11 @@
 
 
           </div>
-            
-
+          
+       
+         <div onclick="ShowGitment()" id="gitment-display-button">显示 Gitment 评论</div>
+         <div id="gitment-container" style="display:none"></div>
+       
 
 
 
@@ -1689,21 +1692,6 @@
 <script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
 </script>
 
-    <div id="container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-var gitment = new Gitment({
-  id: location.href, // 可选。默认为 location.href
-  owner: 'lyj505',
-  repo: 'gitment',
-  oauth: {
-    client_id: '63db88b32b5e54c89dd0',
-    client_secret: '3e0a8df5d5709a174aeffa9ee3c0f335a19e5255',
-  },
-})
-gitment.render('container')
-</script>
 
 
 
