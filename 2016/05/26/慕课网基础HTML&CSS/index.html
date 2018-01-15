@@ -564,6 +564,7 @@ table标签有个属性summary表示摘要的内容,摘要的内容是不会在�
    
        <script type="text/javascript">
            function ShowGitment(){
+               console.log('this');
                document.getElementById("gitment-display-button").style.display = "none";
                document.getElementById("gitment-container").style.display = "block";
                var gitment = new Gitment({

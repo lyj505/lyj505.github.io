@@ -601,6 +601,7 @@ FF和IE对box属性支持度不高。
    
        <script type="text/javascript">
            function ShowGitment(){
+               console.log('this');
                document.getElementById("gitment-display-button").style.display = "none";
                document.getElementById("gitment-container").style.display = "block";
                var gitment = new Gitment({

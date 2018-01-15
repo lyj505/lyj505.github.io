@@ -771,6 +771,7 @@ script标签解析中,defer:表示脚本可以延迟到文档完全被解析和�
    
        <script type="text/javascript">
            function ShowGitment(){
+               console.log('this');
                document.getElementById("gitment-display-button").style.display = "none";
                document.getElementById("gitment-container").style.display = "block";
                var gitment = new Gitment({
