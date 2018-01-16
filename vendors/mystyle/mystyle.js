@@ -52,7 +52,7 @@ function pjax_loadDuodsuo(){
  function afterPjax(){
     pjax_loadDuodsuo();
      //showPageCounter();
-    showVisitorCounter();
+    //showVisitorCounter();
   }
 }
    })(jQuery);
