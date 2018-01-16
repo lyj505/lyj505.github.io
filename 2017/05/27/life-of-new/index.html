@@ -543,8 +543,11 @@
             clearInterval(interval_$)
      $("#gitment-display-button").click();
       setTimeout(function(){
-       // $(".gitment-comments-init-btn").click()
-      },500)
+        var gitment_btn = $("#gitment-comments-init-btn");
+        if(gitment_btn && gitment_btn.length>0){
+        gitment_btn.click()
+        }
+      },3000)
           }
      },500)
     </script>
