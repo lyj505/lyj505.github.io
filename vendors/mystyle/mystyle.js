@@ -51,7 +51,7 @@ function pjax_loadDuodsuo(){
 
  function afterPjax(){
     pjax_loadDuodsuo();
-     showPageCounter();
+     //showPageCounter();
     showVisitorCounter();
   }
 }
