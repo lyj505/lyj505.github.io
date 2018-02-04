@@ -288,7 +288,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -361,6 +361,134 @@
             
 
   <section id="posts" class="posts-expand">
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2018/02/04/company-part-2017/" itemprop="url">
+                  company-part-2017(I)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2018-02-04T22:55:41+08:00" content="2018-02-04">
+              2018-02-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/review/" itemprop="url" rel="index">
+                    <span itemprop="name">review</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1.关于axios跨域的问题,最开始使用axios的时候,那时后台还没有分离,没用使用webapi的模式进行通讯。出现这个问题的根本是由于,系统代码部署在微信公众号的基础上,当本地调试的时候,如果没用使用业务正确的url的时候,导致访问后台接口跨域,在netwrok里面可以查看到那条请求的response header里面查看到location 已经是”<a href="https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。" target="_blank" rel="external">https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。</a><br>所以在分析是否跨域问题的时候,即使同源的请求,也需要看清楚自己代码的环境,以处理问题。</p>
+<p>2.当时遇到一个svn的问题,从服务器端更新代码的时候,提示Working copy和文件被锁,当时有2种解决办法:</p>
+<ol>
+<li>通过database去删掉lock的数据。。(失败操作:下载了一个sqlite,然后将整个svn关联的那张表给删除了。。。导致无法用了,其实只需要删除对应出错的表数据即可)</li>
+<li>新建一个,重新拉取(感觉这个方法更傻了。。)</li>
+</ol>
+<p>3.关于mui的上下拉刷新,实际上蛮坑的,看了源码,现在这个功能的需求是:</p>
+<ol>
+<li>step1:要实现禁止下拉刷新 (这个可以有api)</li>
+<li>step2:重新触发下拉刷新  (这个触发就会出现bug)<br>当时也去issue提了,好像现在还没结果。。。算了,毕竟是2015年ios7.0版本的ui框架了,可能也维护少了。<br>使用上vue+mui做上下拉刷新其实蛮简单的(处理好初始化,上下拉的api与ajax时候相结合,这里是有优化空间的),但是由于业务原因,并没有抽象出来组件,看上去也并不是想象中那么好维护。</li>
+<li>当时有个bug。。。明天去公司查看下日志,,忘了是什么处理的了(undo)</li>
+</ol>
+<p>4.现在上传服务器由于远程服务器系统用的windows,整个iis驱动,所以这边为了方便也搞了一个FlashFXP的gui上传工具,实际上对于目前架构而言上传文件蛮方便,不管前端还是后端(cshtml以及静态资源与dll文件),只要建立一个对应的书签页,非常迅速,相比之前使用cli处理于服务器的文件上传,,,表示没搞过目前还是不会,即使这个blog的最简单的hexo g -d….(undo)</p>
+<p>5.吐槽一下公司vs管理包工具nuget,真心难用,每次有更新,都要手动拉入,估计是我装了一个错误版本的中文版vs,连自带iis服务器也跑不起来,难受。。</p>
+<p>6.signalr,这个就不多描述了,jquery+.net封装好的websocket双工通讯把,蛋疼的是做vue项目的时候为了做实时通讯,而多引入了一个jquery包,真的难受,以后看有空了看看websocket的降级处理吧,当然当时如果要改的话,后台估计也得大改,公司的需求快速产出,大家都懂的。</p>
+<p>7.总得来说,管理资源还是得进一步,这个比较重要,对于懒人来说非常需要在合适的地方迅速找到合适的资源,不管公司的电脑还是家里的,不管系统win还是ubuntu或者是其他的,都需要有个统一的规划,所以是有必要规划一个云服务(百度云盘….)<br>8.之前为了用flex布局,还单独用autoprefixed写了一套flex的布局库,,直到后来发现了postcss,再也不用写autoprefixed了。。</p>
+<h6 id="Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写"><a href="#Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写" class="headerlink" title="Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写"></a>Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写</h6>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
     
@@ -617,121 +745,6 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/20/basic-use-md/" itemprop="url">
-                  basic use of md
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-04-20T23:16:26+08:00" content="2017-04-20">
-              2017-04-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h3 id="md-忘了hexo-标签需要空格写数组"><a href="#md-忘了hexo-标签需要空格写数组" class="headerlink" title="(md 忘了hexo 标签需要空格写数组..)"></a>(md 忘了hexo 标签需要空格写数组..)</h3><h1 id="This-is-an-H1"><a href="#This-is-an-H1" class="headerlink" title="This is an H1"></a>This is an H1</h1><h2 id="This-is-an-H2"><a href="#This-is-an-H2" class="headerlink" title="This is an H2"></a>This is an H2</h2>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/04/20/basic-use-md/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
                 <a class="post-title-link" href="/2017/04/20/recent-problem-of-interview/" itemprop="url">
                   resent problem of interview
                 </a>
@@ -806,6 +819,121 @@
 <li>Frame<br>(1)现有问题：在IE中可以用window.top.frameId和window.top.frameName来得到该Frame所代表的Window，Firefox中只能用window.top.frameName。
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/04/20/recent-problem-of-interview/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/20/basic-use-md/" itemprop="url">
+                  basic use of md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-20T23:16:26+08:00" content="2017-04-20">
+              2017-04-20
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/markdown/" itemprop="url" rel="index">
+                    <span itemprop="name">markdown</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="md-忘了hexo-标签需要空格写数组"><a href="#md-忘了hexo-标签需要空格写数组" class="headerlink" title="(md 忘了hexo 标签需要空格写数组..)"></a>(md 忘了hexo 标签需要空格写数组..)</h3><h1 id="This-is-an-H1"><a href="#This-is-an-H1" class="headerlink" title="This is an H1"></a>This is an H1</h1><h2 id="This-is-an-H2"><a href="#This-is-an-H2" class="headerlink" title="This is an H2"></a>This is an H2</h2>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2017/04/20/basic-use-md/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1415,121 +1543,6 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javaScript"</span>&gt;</span><span class="actionscript"></span><br><span class="line">    alert(<span class="string">'欢迎来到JavaScript世界！'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/30/JS初体验/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/30/flex布局小结/" itemprop="url">
-                  flex布局小结(1)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-30T01:18:06+08:00" content="2016-05-30">
-              2016-05-30
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/flex布局/" itemprop="url" rel="index">
-                    <span itemprop="name">flex布局</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><h2 id="基础要点"><a href="#基础要点" class="headerlink" title="基础要点"></a>基础要点</h2><p>1.一般来说flex布局注意父元素和子元素的关系,父元素为容器元素(container),子元素为项目元素(items),添加个语义。<br>2.注意,设为Flex布局以后,子元素的float、clear和vertical-align属性将失效。<br>3.flex属性是flex-grow,flew-shrink和flex-basis的简写。默认值为0 1 auto;<br>  flex属性值是1时,     flex-grow、flex-shrink、flex-basis分别为1 1 0%;<br>  flex属性值是auto时,  flex-grow、flex-shrink、flex-basis分别为1 1 auto;<br>  flex属性值是none时候,flex-grow、flex-shrink、flex-basis分别为0 0 auto。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/30/flex布局小结/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
