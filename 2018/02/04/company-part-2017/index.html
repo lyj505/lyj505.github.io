@@ -99,7 +99,7 @@
 <meta property="og:url" content="http://lyjnc.me/2018/02/04/company-part-2017/index.html">
 <meta property="og:site_name" content="lyjBlog">
 <meta property="og:description" content="1.关于axios跨域的问题,最开始使用axios的时候,那时后台还没有分离,没用使用webapi的模式进行通讯。出现这个问题的根本是由于,系统代码部署在微信公众号的基础上,当本地调试的时候,如果没用使用业务正确的url的时候,导致访问后台接口跨域,在netwrok里面可以查看到那条请求的response header里面查看到location 已经是”https://open.weixin.qq">
-<meta property="og:updated_time" content="2018-02-04T16:09:17.048Z">
+<meta property="og:updated_time" content="2018-02-06T12:56:33.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="company-part-2017(I)">
 <meta name="twitter:description" content="1.关于axios跨域的问题,最开始使用axios的时候,那时后台还没有分离,没用使用webapi的模式进行通讯。出现这个问题的根本是由于,系统代码部署在微信公众号的基础上,当本地调试的时候,如果没用使用业务正确的url的时候,导致访问后台接口跨域,在netwrok里面可以查看到那条请求的response header里面查看到location 已经是”https://open.weixin.qq">
@@ -355,7 +355,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写"><span class="nav-number">1.</span> <span class="nav-text">Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写"><span class="nav-number">1.</span> <span class="nav-text">Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Mon-Feb-5-19-56-24-CST-2018-早上又没起来-又错过passby的票…明天一定要起来抢票啊！"><span class="nav-number">2.</span> <span class="nav-text">Mon Feb 5 19:56:24 CST 2018 早上又没起来,又错过passby的票…明天一定要起来抢票啊！</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#app类型"><span class="nav-number"></span> <span class="nav-text">app类型:(?????????)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#way1"><span class="nav-number"></span> <span class="nav-text">way1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#way2"><span class="nav-number"></span> <span class="nav-text">way2</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Mon-Feb-5-23-17-21-CST-2018-先睡了。。。搞dat-笑死了。。"><span class="nav-number">1.</span> <span class="nav-text">Mon Feb 5 23:17:21 CST 2018 先睡了。。。搞dat 笑死了。。</span></a></li></ol></div>
             
           </div>
         </section>
@@ -459,8 +459,7 @@
       
 
       
-        <p>1.关于axios跨域的问题,最开始使用axios的时候,那时后台还没有分离,没用使用webapi的模式进行通讯。出现这个问题的根本是由于,系统代码部署在微信公众号的基础上,当本地调试的时候,如果没用使用业务正确的url的时候,导致访问后台接口跨域,在netwrok里面可以查看到那条请求的response header里面查看到location 已经是”<a href="https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。" target="_blank" rel="external">https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。</a><br>所以在分析是否跨域问题的时候,即使同源的请求,也需要看清楚自己代码的环境,以处理问题。</p>
-<p>2.当时遇到一个svn的问题,从服务器端更新代码的时候,提示Working copy和文件被锁,当时有2种解决办法:</p>
+        <p>1.关于axios跨域的问题,最开始使用axios的时候,那时后台还没有分离,没用使用webapi的模式进行通讯。出现这个问题的根本是由于,系统代码部署在微信公众号的基础上,当本地调试的时候,如果没用使用业务正确的url的时候,导致访问后台接口跨域,在netwrok里面可以查看到那条请求的response header里面查看到location 已经是”<a href="https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。" target="_blank" rel="external">https://open.weixin.qq.com/xxxx&quot;(需要微信授权的页面)。</a><br>所以在分析是否跨域问题的时候,即使同源的请求,也需要看清楚自己代码的环境,以处理问题。<br><a id="more"></a><br>2.当时遇到一个svn的问题,从服务器端更新代码的时候,提示Working copy和文件被锁,当时有2种解决办法:</p>
 <ol>
 <li>通过database去删掉lock的数据。。(失败操作:下载了一个sqlite,然后将整个svn关联的那张表给删除了。。。导致无法用了,其实只需要删除对应出错的表数据即可)</li>
 <li>新建一个,重新拉取(感觉这个方法更傻了。。)</li>
@@ -475,7 +474,37 @@
 <p>5.吐槽一下公司vs管理包工具nuget,真心难用,每次有更新,都要手动拉入,估计是我装了一个错误版本的中文版vs,连自带iis服务器也跑不起来,难受。。</p>
 <p>6.signalr,这个就不多描述了,jquery+.net封装好的websocket双工通讯把,蛋疼的是做vue项目的时候为了做实时通讯,而多引入了一个jquery包,真的难受,以后看有空了看看websocket的降级处理吧,当然当时如果要改的话,后台估计也得大改,公司的需求快速产出,大家都懂的。</p>
 <p>7.总得来说,管理资源还是得进一步,这个比较重要,对于懒人来说非常需要在合适的地方迅速找到合适的资源,不管公司的电脑还是家里的,不管系统win还是ubuntu或者是其他的,都需要有个统一的规划,所以是有必要规划一个云服务(百度云盘….)<br>8.之前为了用flex布局,还单独用autoprefixed写了一套flex的布局库,,直到后来发现了postcss,再也不用写autoprefixed了。。</p>
-<h6 id="Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写"><a href="#Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写" class="headerlink" title="Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写"></a>Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写</h6>
+<h6 id="Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写"><a href="#Mon-Feb-5-00-09-01-CST-2018-明天继续写-或者早上起来抢票的时候写" class="headerlink" title="Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写"></a>Mon Feb 5 00:09:01 CST 2018 明天继续写,或者早上起来抢票的时候写</h6><h6 id="Mon-Feb-5-19-56-24-CST-2018-早上又没起来-又错过passby的票…明天一定要起来抢票啊！"><a href="#Mon-Feb-5-19-56-24-CST-2018-早上又没起来-又错过passby的票…明天一定要起来抢票啊！" class="headerlink" title="Mon Feb 5 19:56:24 CST 2018 早上又没起来,又错过passby的票…明天一定要起来抢票啊！"></a>Mon Feb 5 19:56:24 CST 2018 早上又没起来,又错过passby的票…明天一定要起来抢票啊！</h6><p>9.node-sass安装有点闹心~~,由于被墙的缘故,从远程下载包到本地安装,<br>需要<br><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET SASS_BINARY_SITE = C:<span class="symbol">\U</span>sers<span class="symbol">\l</span>iyj<span class="symbol">\D</span>esktop<span class="symbol">\t</span>ools<span class="symbol">\w</span>in32-x64-51_binding.node</span><br></pre></td></tr></table></figure></p>
+<p>还要注意不同版本的nodejs需要不同的binding.node</p>
+<p>10.想想平时用到的常用的几个vsc快捷键:<br><figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ctrl+p 打开文件搜索</span><br><span class="line">ctrl+<span class="keyword">shift+p </span>打开热键列表(主要用来加<span class="keyword">js </span>doc(<span class="keyword">or </span>F1))</span><br><span class="line">ctrl+<span class="keyword">shift+X </span>打开扩展,下载扩展</span><br><span class="line">ctrl+<span class="keyword">shift+f </span>全局(本项目<span class="keyword">or解决方案)查找关键词</span><br><span class="line"></span>alt+F5   run code</span><br><span class="line">ctrl+<span class="keyword">shift+y </span>打开终端</span><br><span class="line">ctrl+k &amp;&amp; ctrl+c 注释,这个主要是在vs里习惯了。。</span><br><span class="line">ctrl+E  前端emmet经常用到的补全把</span><br><span class="line">话说vsc的对比工具和git解决冲突是蛮好用的,难道是中文??...</span><br></pre></td></tr></table></figure></p>
+<p>11.最开始使用mui的ui框架考虑了很久,不过后来也没弃坑。。that too bad for coding without maintaining,想造轮子,没时间精力啊,逃。为了迎合大众的使用习惯,jquery+mui+vue+mvc == boom ~~~,公司组织架构如此。一来公司,给谁4000行cshtml,我想想很难接受。。</p>
+<p>12.ui优化建议:将重要的,用户最需要的首先展现出来,不需要的可以收到fab按钮里面,多一个交互展开。</p>
+<p>13.关于ionic2.0与ng4..本来准备用的,奈何webapp路由问题没有解决,还是算了,以后自己撸个app玩吧,毕竟有typescript啊。。我也想写mocha,jasmine 啊,写覆盖率啊,自动化测试(滑稽)。</p>
+<p>14.之前技术选型时的考虑:<br><em>关于web-font-end-structure-building</em></p>
+<h4 id="app类型"><a href="#app类型" class="headerlink" title="app类型:(?????????)"></a>app类型:(?????????)</h4><p><strong>技术选型</strong></p>
+<h3 id="way1"><a href="#way1" class="headerlink" title="way1"></a>way1</h3><ol>
+<li>类型:webapp,兼容端:微信,safari,andriod browser,uc,qq浏览器.</li>
+<li>js框架:angular.(语法:es6,typescript===&gt;es5)</li>
+<li>打包工具:webpack.</li>
+<li>测试工具:mocha?(暂时未决定,没使用过).</li>
+<li>UI框架选型:ionic.(ionic内置的路由,没有记录地址,使用的是深层路由)</li>
+<li>数据源:开源api及本地jsonMock.</li>
+<li>任务工具:gulp(暂不用合并使用).</li>
+<li>开发优化,不计.</li>
+<li>前后端分离,本地使用apache 转发alias服务器。</li>
+<li>========&gt;&gt;&gt;看了下对比,各大app选型,移动端的还是react比较多,方案采取react.</li>
+<li>angular + materials =====&gt;&gt;pc端</li>
+</ol>
+<h3 id="way2"><a href="#way2" class="headerlink" title="way2"></a>way2</h3><ol>
+<li>js框架:vue.(语法:es6===&gt;es5) vux</li>
+<li>ui框架:未知.(========)</li>
+<li>vue 适合小项目</li>
+</ol>
+<p>15.想起来了之前几个微信表单验证,硬是有40几个,利用h5的validation和require的数量,进行自定义提示,如果像以前<br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(notmeetend)<span class="keyword">return</span>;</span><br></pre></td></tr></table></figure></p>
+<p>估计要写。。好多代码,用这种验证,相当于h5的自带验证提示,可以自定义样式,也蛮好用的。。其实难点在于自定义图片上传组件(个数 base64存,validata图片小于2M)和递归自定义省市区/省市/省(5,4,3,2,1级的联动<del>,一个递归也可以解决了),这个上面蛮花功夫的。。so,coding is so cheap.以后有空整理一下,上次用fis写了一个小组件的</del>~ 对了其实我个人认为,当时做这个需求的时候,没有分析好,因为pc有一个现成的模板,虽然是mvc的,这样现在分离出来写个移动端的表单验证,看上去好用,实际上以后维护是两套,所以作为复用的思维,这种做法是错误的。花时间去梳理业务逻辑何必呢。</p>
+<p>16.”play_js_rule_coding.txt”,这个之后有空总结一下(undo)。</p>
+<p>17.话说我webpack。。英文教程也刷了很多了,这个也可以单独写个,不过rollup,parcel(可能拼写错了)一出了,看了下打包速度,,,真的尴尬,我的webpack啊,刚用上就要放弃了吗~~</p>
+<h6 id="Mon-Feb-5-23-17-21-CST-2018-先睡了。。。搞dat-笑死了。。"><a href="#Mon-Feb-5-23-17-21-CST-2018-先睡了。。。搞dat-笑死了。。" class="headerlink" title="Mon Feb 5 23:17:21 CST 2018 先睡了。。。搞dat 笑死了。。"></a>Mon Feb 5 23:17:21 CST 2018 先睡了。。。搞dat 笑死了。。</h6>
       
     </div>
 
