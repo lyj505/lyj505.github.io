@@ -1,3 +1,5 @@
+return;
+
 var canvasFP = {
   getFP: function() {
     var _t = this;
